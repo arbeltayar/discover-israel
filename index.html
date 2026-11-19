@@ -2,18 +2,23 @@
 <html lang="he" dir="rtl">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Discover Israel — גרסה 0.7.3</title>
-<meta name="description" content="Discover Israel — תכנון טיול אישי בישראל">
+<title>Discover Israel — גרסה 0.7.4</title>
+<meta name="description" content="Discover Israel — תכנון טיולים בישראל לפי אזור, תאריכים והעדפות. גלו חופים, מסלולים, מסעדות ומלונות, צרו מסלול אישי וראו את המקומות על מפה.">
+<link rel="canonical" href="https://arbeltayar.github.io/discover-israel/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Discover Israel — תכנון טיולים בישראל">
+<meta property="og:description" content="Discover Israel helps you discover and plan trips across Israel with interactive maps, attractions and places to stay.">
+<meta property="og:url" content="https://arbeltayar.github.io/discover-israel/">
 <meta name="theme-color" content="#176b58">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Discover Israel">
-<link rel="icon" type="image/svg+xml" href="./favicon.svg?v=073">
-<link rel="alternate icon" type="image/x-icon" href="./favicon.ico?v=073">
-<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png?v=073">
-<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png?v=073">
-<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png?v=073">
-<link rel="manifest" href="./manifest.json?v=073">
+<link rel="icon" type="image/svg+xml" href="./favicon.svg?v=074">
+<link rel="alternate icon" type="image/x-icon" href="./favicon.ico?v=074">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png?v=074">
+<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png?v=074">
+<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png?v=074">
+<link rel="manifest" href="./manifest.json?v=074">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@5.24.1/dist/maplibre-gl.css" crossorigin="">
 <style>
 :root{--green:#176b58;--green2:#0d4f41;--mint:#e7f2ec;--ink:#1c302c;--muted:#72827a;--line:#e2e9e3;--bg:#f6f8f5;--sand:#f1ede4;--shadow:0 14px 40px rgba(34,61,49,.09)}
@@ -129,7 +134,7 @@ body{background:#f8f7f3;font-family:Inter,Arial,"Noto Sans Hebrew",sans-serif;le
 @media(max-width:780px){.map-head-right{gap:9px}.map-scope-control{order:1}.map-style-control{order:2}.maptitle{align-items:flex-start;flex-direction:column}.map-head-right{width:100%;justify-content:space-between}}
 @media(max-width:600px){.start-chooser{grid-template-columns:1fr}.start-chooser .secondary{margin:0}.pick-results{max-height:190px}.map-scope-control button{padding:7px 8px;font-size:10px}.map-style-control{font-size:10px}.map-style-control select{min-width:80px}.navigation-actions a{flex:1}#origin-map{height:280px}}
 
-/* 0.7.3 – unified place discovery, photo verification, and resilient point picker */
+/* 0.7.4 – unified place discovery, photo verification, and resilient point picker */
 .search-tools{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin:8px 0 9px}
 .search-feedback{font-size:11px;line-height:1.6;color:#718178;flex:1;min-width:130px}
 .search-feedback.is-error{color:#96653c}
@@ -156,7 +161,7 @@ body{background:#f8f7f3;font-family:Inter,Arial,"Noto Sans Hebrew",sans-serif;le
 .open-map-notice{font-size:11px;color:#75877b;line-height:1.7}
 @media(max-width:600px){.search-tools{gap:6px}.search-feedback{min-width:100%;font-size:10px}.pick-option{padding:11px 9px}.pick-option .pick-source{font-size:9px}}
 
-/* Discover Israel 0.7.3 - Nationwide search and transparent address precision */
+/* Discover Israel 0.7.4 - Nationwide search and transparent address precision */
 .address-home-actions{margin-top:12px}.address-dialog{width:min(760px,100%)}
 .address-suggestions{position:relative;z-index:3;max-height:170px;overflow:auto;margin:4px 0 8px}
 .address-suggestions:empty{display:none}.address-suggestions button{width:100%;text-align:start;display:block;background:#fbfdfa;border:1px solid #e6ebe3;padding:10px 12px;font-size:12px;color:#335745;border-radius:9px;margin:2px 0}
@@ -170,30 +175,41 @@ body{background:#f8f7f3;font-family:Inter,Arial,"Noto Sans Hebrew",sans-serif;le
 .national-status{font-size:11px;color:#71877a;line-height:1.5;margin-top:8px}
 @media(max-width:600px){.address-actions{justify-content:stretch}.address-actions button{flex:1;min-width:40%}.address-result{align-items:flex-start;flex-direction:column}.address-result button{width:100%}}
 
-/* Discover Israel v0.7.3 — planner, map, discovery and accessible responsive controls */
+/* Discover Israel v0.7.4 — planner, map, discovery and accessible responsive controls */
 body.has-map-fullscreen .animate-in{animation:none!important;transform:none!important;opacity:1!important}
 body.has-map-fullscreen .main{max-width:none}
 .header-side{display:flex;align-items:center;gap:7px;flex-wrap:wrap}.quality-panel .field{min-width:0}.quality-panel .sub{margin-bottom:15px}.quality-panel .chips{margin-top:5px}
 .inline-status{font-size:11px;color:#64806b;line-height:1.6;min-height:17px}.weather-day{margin:5px 0 12px;border-radius:12px;padding:12px 14px;border:1px solid #dce9dc;background:linear-gradient(115deg,#f6faf5,#edf5f1);font-size:12px;line-height:1.6;display:flex;align-items:center;gap:12px;flex-wrap:wrap}.weather-day:empty{display:none}.weather-day strong{font-size:13px;color:#285e4a}.weather-day .weather-symbol{font-size:23px}.weather-day small{color:#657c70}.food-suggestions,.stay-suggestions{display:grid;gap:8px;margin:10px 0 16px}.suggestion-panel{border:1px solid #e1e9e2;border-radius:12px;padding:12px;background:#f9fbf9}.suggestion-panel>strong{display:block;font-size:13px;margin-bottom:8px}.suggestion-panel .hint{margin:0 0 8px}.suggestion-place{display:flex;align-items:center;justify-content:space-between;gap:7px;padding:8px 0;border-top:1px solid #edf0ed}.suggestion-place span{font-size:12px;line-height:1.45}.suggestion-place .mini{white-space:nowrap}.maptitle-left{display:flex;align-items:center;gap:9px;flex-wrap:wrap}.mapbox.map-fullscreen{position:fixed!important;inset:0!important;width:100vw!important;height:100dvh!important;max-height:100dvh!important;z-index:2000;background:#fff;display:flex;flex-direction:column;overflow:hidden;border-radius:0;padding:0;margin:0}.mapbox.map-fullscreen .map-canvas-wrap{flex:1;min-height:0}.mapbox.map-fullscreen #map{height:100%!important;min-height:0!important}.mapbox.map-fullscreen .explore-map{height:100%!important;flex:1;min-height:0}.mapbox.map-fullscreen .maptitle{flex:none}.mapbox.map-fullscreen .legend,.mapbox.map-fullscreen .mapfoot{flex:none}.explore-workspace{display:grid;grid-template-columns:minmax(280px,.65fr) minmax(0,1.55fr);gap:14px;align-items:start;margin-top:20px}.explore-side{max-height:690px;overflow:auto}.explore-mapbox{min-height:520px}.explore-map{height:525px;min-height:360px;border-radius:10px;overflow:hidden}.explore-results{display:grid;gap:5px;max-height:320px;overflow:auto;margin-top:10px}.explore-results button{background:#fff;border:1px solid #e3e9e3;border-radius:9px;padding:10px;text-align:start;color:#28473a}.explore-results button:hover{background:#edf6ef}.explore-results strong{display:block;font-size:12px}.explore-results small{display:block;color:#71867a;margin-top:4px}.explore-picked{margin-top:17px;padding:14px;border-radius:12px;background:#edf6f0;border:1px solid #c9e2d0}.explore-picked h3{margin:0 0 4px;font-size:14px}.explore-picked p{font-size:11px;margin:0 0 12px;color:#5b7768}.explore-picked label{font-size:11px;font-weight:bold;display:block;margin-bottom:6px}.explore-picked select{font-size:12px}.mapbox.map-fullscreen .map-head-right{flex-wrap:wrap}.onboard-help{font-size:11px;line-height:1.6;color:#688174;margin-top:10px}
 @media(max-width:900px){.explore-workspace{grid-template-columns:1fr}.explore-side{max-height:none}.explore-map{height:440px}.top{align-items:center}}@media(max-width:600px){.header-side{gap:4px}.header-side .lang-btn{font-size:10px;padding:7px}.explore-map{height:390px}.explore-mapbox{min-height:0}.suggestion-place{align-items:flex-start}.suggestion-place span{flex:1}.weather-day{gap:7px}.mapbox.map-fullscreen .maptitle{padding:9px}.mapbox.map-fullscreen .map-head-right{gap:4px}}
 
-/* 0.7.3: Original four-region Discover Israel icon as visible product branding. */
+/* 0.7.4: Original four-region Discover Israel icon as visible product branding. */
 .mark.mark-logo{background:transparent;overflow:hidden;padding:0;flex:none;box-shadow:0 1px 3px rgba(19,78,55,.13)}
 .mark-logo>img{display:block;width:100%;height:100%;object-fit:cover;border-radius:inherit}
+
+/* Discover Israel 0.7.4 — accessibility, personal profile, tutorial, and visible progress. */
+.language-card{width:min(740px,98vw)}.language-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:8px;max-height:min(51vh,480px);overflow-y:auto;padding:4px}.language-choice{min-height:56px;text-align:center}.language-support-note{text-align:center;color:#5b6f66;font-size:11px;line-height:1.55;margin:12px 0 0}
+.onboard-exit{float:inline-end;appearance:none;border:1px solid #dde6dd;background:white;border-radius:50%;color:#325b4b;font-size:22px;cursor:pointer;width:34px;height:34px;margin-bottom:4px}.onboard-exit:hover{background:#edf5ef}.onboard-card .answer[aria-pressed=true]{border:2px solid #176b58;background:#eff8f2}
+.busy-overlay{position:fixed;inset:0;z-index:5400;display:grid;place-items:center;background:rgba(13,45,34,.56);backdrop-filter:blur(8px);padding:20px}.busy-card{background:white;text-align:center;width:min(440px,100%);padding:35px;border-radius:24px;box-shadow:0 26px 90px #173c3060}.busy-card h2{font-size:22px;margin:12px 0 4px}.busy-card p{font-size:13px;color:#63776b;line-height:1.6;min-height:25px}.busy-visual{display:flex;align-items:center;justify-content:center;gap:10px;height:50px}.busy-visual span{width:13px;height:13px;border-radius:50%;background:#176b58;animation:discoverPulse 1.1s ease-in-out infinite}.busy-visual span:nth-child(2){animation-delay:.18s}.busy-visual span:nth-child(3){animation-delay:.36s}.busy-indeterminate{height:4px;background:#e4f0e7;border-radius:9px;overflow:hidden;position:relative;margin-top:18px}.busy-indeterminate::before{content:"";position:absolute;top:0;bottom:0;width:33%;background:#176b58;border-radius:9px;animation:discoverLoad 1.4s ease-in-out infinite}@keyframes discoverPulse{0%,70%,100%{transform:translateY(0);opacity:.55}35%{transform:translateY(-9px);opacity:1}}@keyframes discoverLoad{0%{inset-inline-start:-35%}100%{inset-inline-start:100%}}
+.map-service-pin{width:36px;height:36px;border:2px solid white;border-radius:12px;color:#fff;background:#1f6550;font-size:18px;box-shadow:0 3px 12px #162f2566;cursor:pointer}.map-service-pin.food-marker{background:#cf7b3d}.map-service-pin:hover{transform:scale(1.08)}.map-pin[data-kind="food"]::after{content:"🍽";position:absolute;inset-inline-end:-9px;top:-9px;font-size:11px;background:#fff;border-radius:50%;padding:1px}.map-pin[data-kind="lodging"]::after{content:"🛏";position:absolute;inset-inline-end:-9px;top:-9px;font-size:11px;background:#fff;border-radius:50%;padding:1px}
+.assistant-results{margin-top:12px}.assistant-grid{display:grid;gap:10px}.assistant-result{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:12px 14px;background:#f5faf6;border:1px solid #d9e7de;border-radius:12px}.assistant-result strong{display:block;font-size:13px}.assistant-result small{color:#61766a;line-height:1.55}.assistant-notice{margin:10px 0;font-size:12px;color:#53685d;line-height:1.6}.assistant-loading{display:flex;align-items:center;gap:8px;padding:12px;background:#f2f8f4;border-radius:12px}.assistant-loading .search-tool-spinner{width:16px;height:16px}
+.day-select-wrap{display:flex;align-items:center;gap:7px;padding-inline:8px;font-size:12px}.day-select-wrap select{border:1px solid #d8e3da;border-radius:8px;background:white;padding:9px;max-width:165px}.tutorial-step{padding:12px 4px;min-height:150px}.tutorial-step h3{font-size:21px;margin:6px 0 12px}.tutorial-step p{line-height:1.8;color:#576b60}.tutorial-progress{font-size:12px;color:#577363;margin:4px 0 18px}
+#user-profile-overlay .dialog{max-width:540px}#user-profile-overlay .dialog-body{overflow:auto;max-height:72vh}.header-side{gap:6px;flex-wrap:wrap}
+@media(max-width:650px){.header-side .lang-btn{font-size:10px;padding:7px}.assistant-result{grid-template-columns:1fr}.language-options{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){.busy-visual span,.busy-indeterminate::before{animation:none}}
 </style>
 </head>
 <body>
 <header class="top">
-  <div class="brand"><span class="mark mark-logo"><img src="./icon-192.png?v=073" width="34" height="34" alt="" aria-hidden="true"></span><span>Discover Israel</span><span class="version">גרסה 0.7.3</span></div>
+  <div class="brand"><span class="mark mark-logo"><img src="./icon-192.png?v=074" width="34" height="34" alt="" aria-hidden="true"></span><span>Discover Israel</span><span class="version">גרסה 0.7.4</span></div>
   <nav class="nav" aria-label="Main navigation"><button class="active" data-view="home" data-i18n="navHome">ראשי</button><button data-view="create" data-i18n="navPlan">תכנון טיול</button><button data-view="saved" data-i18n="navSaved">טיולים שמורים</button><button data-view="explore" id="nav-explore" data-he="מפה נקייה" data-en="Explore map">מפה נקייה</button></nav>
-  <div class="header-side"><button class="lang-btn" id="profile-edit" type="button" data-he="⚙ ההעדפות שלי" data-en="⚙ My preferences">⚙ ההעדפות שלי</button><button class="lang-btn" id="lang-switch" type="button">עברית · EN</button></div>
+  <div class="header-side"><button class="lang-btn" id="tutorial-open" type="button" data-he="? מדריך" data-en="? Guide">? מדריך</button><button class="lang-btn" id="user-profile-open" type="button" data-he="◉ הפרופיל שלי" data-en="◉ My profile">◉ הפרופיל שלי</button><button class="lang-btn" id="profile-edit" type="button" data-he="⚙ ההעדפות שלי" data-en="⚙ My preferences">⚙ ההעדפות שלי</button><button class="lang-btn" id="lang-switch" type="button">עברית · EN</button></div>
 </header>
 <main class="main">
 <section id="home-view" class="animate-in">
   <div class="home-hero"><div class="home-copy"><div class="eyebrow" data-i18n="heroEyebrow">DISCOVER MORE · EXPERIENCE ISRAEL</div><h1 data-i18n="heroTitle">כל ישראל. בקצב שלך.</h1><p data-i18n="heroText">מהנחלים וההרים בצפון ועד המדבר והים בדרום — בנה טיול שמתחבר למה שאתה אוהב, עם חוויות שמתאימות בדיוק לדרך שלך.</p><div class="home-actions"><button class="primary" data-open-create data-i18n="startPlanning">בואו נתכנן טיול ←</button><button class="secondary" id="see-regions" data-i18n="exploreRegions">לגלות את האזורים</button></div></div></div>
   <section class="discover-panel" aria-label="חיפוש מקומות חי">
     <div class="discover-head"><div><div class="eyebrow">DISCOVER MORE</div><h2>מקום מסוים בראש? בואו נמצא אותו.</h2><p>חפשו ערים, כתובות ואטרקציות ברחבי ישראל. בחרו מקום והוסיפו אותו לטיול שלכם.</p></div></div>
-    <div class="discover-controls"><input id="live-query" type="search" placeholder="למשל: נחל כזיב, מצדה, תצפית בגליל" aria-label="חיפוש מקום בישראל"><select id="live-region" aria-label="אזור חיפוש"><option value="all">כל הארץ</option><option value="north">צפון</option><option value="center">מרכז והחוף</option><option value="jerusalem">ירושלים והסביבה</option><option value="south">דרום</option></select><button class="primary" id="live-search">חיפוש בכל הארץ ←</button></div>
+    <div class="discover-controls"><input id="live-query" type="search" placeholder="למשל: תל אביב, יפו העתיקה, חוף גורדון" data-placeholder-he="למשל: תל אביב, יפו העתיקה, חוף גורדון" data-placeholder-en="E.g. Tel Aviv, Old Jaffa, Gordon Beach" aria-label="חיפוש מקום בישראל"><select id="live-region" aria-label="אזור חיפוש"><option value="all">כל הארץ</option><option value="north">צפון</option><option value="center">מרכז והחוף</option><option value="jerusalem">ירושלים והסביבה</option><option value="south">דרום</option></select><button class="primary" id="live-search">חיפוש בכל הארץ ←</button></div>
     <div class="live-status" id="live-status">חפשו מקום בישראל. התוצאות מגיעות ממאגר מקומות פתוח ומחיפוש חינמי באינטרנט.</div><div class="source-line">חיפוש מקומות: Photon / OpenStreetMap · רשימות יישובים ורחובות ממאגר פתוח המבוסס על פרסומי data.gov.il · תמונות ממוקדות מקום: Wikipedia / Wikimedia Commons. הנתונים מתעדכנים בהתאם למקור ולא בכל מקום קיימים מספרי בתים או עסקים.</div><div class="live-results" id="live-results"></div><div class="search-tools address-home-actions"><button type="button" class="mini assist" id="home-address" data-he="＋ הזנת רחוב, מספר בית או דירה" data-en="＋ Enter street, house or apartment">＋ הזנת רחוב, מספר בית או דירה</button><span class="hint" data-he="אפשר גם להזין מיקום ידנית אם הוא לא נמצא בחיפוש." data-en="You can also add a location manually if no match is found.">אפשר גם להזין מיקום ידנית אם הוא לא נמצא בחיפוש.</span></div>
   </section>
   <div class="section-head"><div><h2 data-i18n="regionsTitle">לאן בא לך לנסוע?</h2><p data-i18n="regionsSub">בחר אזור כדי להתחיל לגלות מה מחכה בו.</p></div></div>
@@ -208,7 +224,7 @@ body.has-map-fullscreen .main{max-width:none}
     <div class="feature"><div class="feature-icon">✧</div><div><strong data-i18n="feature1Title">מתכננים לפי הקצב שלך</strong><p data-i18n="feature1Text">מעדיפים יום רגוע או מלא חוויות? בוחרים את הקצב ואת סוג הפעילויות.</p></div></div>
     <div class="feature"><div class="feature-icon">⌖</div><div><strong data-i18n="feature2Title">רואים את הטיול על המפה</strong><p data-i18n="feature2Text">כל יום מסודר בפני עצמו, ואפשר לפתוח מידע על כל מקום ולערוך את התוכנית.</p></div></div>
   </div>
-  <div class="footer">Discover Israel 0.7.3 · תכנון אזורי וחיפוש חי: OpenStreetMap / Wikimedia Commons · מזג אוויר: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> · מקומות: © OpenStreetMap / Overpass · גאוגרפיית בטיחות שמרנית: Natural Earth (Public Domain) · <span data-i18n="photoCredits">קרדיטים לתמונות:</span> <a href="https://commons.wikimedia.org/wiki/File:Banias_Waterfall.jpg" target="_blank" rel="noopener">Grauesel (GFDL 1.2)</a> · <a href="https://commons.wikimedia.org/wiki/File:Tel_Aviv_Promenade.jpg" target="_blank" rel="noopener">Simon Cobb (CC0)</a> · <a href="https://commons.wikimedia.org/wiki/File:Jerusalem_old_city_panorama.jpg" target="_blank" rel="noopener">Itay Tiomkin (CC BY-SA 4.0)</a> · <a href="https://commons.wikimedia.org/wiki/File:Ramon_crater_panorama.jpg" target="_blank" rel="noopener">Yoni Lerner (CC BY 2.0)</a></div>
+  <div class="footer">Discover Israel 0.7.4 · תכנון אזורי וחיפוש חי: OpenStreetMap / Wikimedia Commons · מזג אוויר: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> · מקומות: © OpenStreetMap / Overpass · גאוגרפיית בטיחות שמרנית: Natural Earth (Public Domain) · <span data-i18n="photoCredits">קרדיטים לתמונות:</span> <a href="https://commons.wikimedia.org/wiki/File:Banias_Waterfall.jpg" target="_blank" rel="noopener">Grauesel (GFDL 1.2)</a> · <a href="https://commons.wikimedia.org/wiki/File:Tel_Aviv_Promenade.jpg" target="_blank" rel="noopener">Simon Cobb (CC0)</a> · <a href="https://commons.wikimedia.org/wiki/File:Jerusalem_old_city_panorama.jpg" target="_blank" rel="noopener">Itay Tiomkin (CC BY-SA 4.0)</a> · <a href="https://commons.wikimedia.org/wiki/File:Ramon_crater_panorama.jpg" target="_blank" rel="noopener">Yoni Lerner (CC BY 2.0)</a></div>
 </section>
 
 <section id="create-view" class="hidden">
@@ -217,13 +233,13 @@ body.has-map-fullscreen .main{max-width:none}
     <h2 data-i18n="basicsTitle">קצת פרטים על הטיול</h2><p class="sub" data-i18n="basicsSub">אפשר לשנות את כל הפרטים גם בהמשך.</p>
     <div class="grid">
       <div class="field"><label for="trip-name" data-i18n="tripName">שם הטיול</label><input id="trip-name" maxlength="55" value="הטיול שלי בישראל"></div>
-      <div class="field"><label for="days" data-i18n="days">מספר ימים</label><input id="days" type="number" min="1" max="30" value="4"><div class="hint" data-he="אפשר גם לקבוע תאריכים מדויקים למטה" data-en="Or select exact dates below">אפשר גם לקבוע תאריכים מדויקים למטה</div></div>
+      <div class="field"><label for="days" data-i18n="days">מספר ימים</label><input id="days" type="number" min="1" value="4" inputmode="numeric"><div class="hint" data-he="אפשר גם לקבוע תאריכים מדויקים למטה" data-en="Or select exact dates below">אפשר גם לקבוע תאריכים מדויקים למטה</div></div>
       <div class="field"><label for="budget" data-i18n="budget">תקציב כולל (₪)</label><input id="budget" type="number" min="0" step="100" placeholder="לדוגמה: 3500"></div>
       <div class="field"><label for="region" data-i18n="region">אזור מועדף</label><select id="region"><option value="all" data-i18n="allIsrael">כל הארץ</option><option value="north" data-i18n="north">צפון</option><option value="center" data-i18n="center">מרכז והחוף</option><option value="south" data-i18n="south">דרום</option><option value="jerusalem" data-i18n="jerusalem">ירושלים והסביבה</option></select></div>
     </div>
   </div>
   <div class="panel quality-panel"><h2 data-he="מתי ומי מטיילים?" data-en="Travel dates & group">מתי ומי מטיילים?</h2><p class="sub" data-he="בחר תאריך התחלה וסיום בלוח השנה או הקלד תאריכים. מספר הימים יותאם אוטומטית." data-en="Enter dates or pick them from the calendar. Days update automatically.">בחר תאריך התחלה וסיום בלוח השנה או הקלד תאריכים. מספר הימים יותאם אוטומטית.</p>
-   <div class="grid"><div class="field"><label for="date-from" data-he="תאריך התחלה" data-en="Start date">תאריך התחלה</label><input id="date-from" type="date"></div><div class="field"><label for="date-to" data-he="תאריך סיום" data-en="End date">תאריך סיום</label><input id="date-to" type="date"></div>
+   <div class="grid"><div class="field"><label for="trip-company" data-i18n="company">עם מי אתה מטייל?</label><select id="trip-company"><option value="solo" data-i18n="solo">לבד</option><option value="couple" data-i18n="couple" selected>בזוג</option><option value="friends" data-i18n="friends">חברים</option><option value="family" data-i18n="family">משפחה</option></select></div><div class="field"><label for="date-from" data-he="תאריך התחלה" data-en="Start date">תאריך התחלה</label><input id="date-from" type="date"></div><div class="field"><label for="date-to" data-he="תאריך סיום" data-en="End date">תאריך סיום</label><input id="date-to" type="date"></div>
    <div class="field"><label for="party-adults" data-he="מספר מבוגרים" data-en="Adults">מספר מבוגרים</label><input id="party-adults" type="number" min="0" max="100" value="2"></div><div class="field"><label for="party-kids" data-he="מספר ילדים" data-en="Children">מספר ילדים</label><input id="party-kids" type="number" min="0" max="100" value="0"></div></div>
    <p id="dates-hint" class="inline-status" role="status" aria-live="polite"></p>
   </div>
@@ -272,7 +288,6 @@ body.has-map-fullscreen .main{max-width:none}
     </div>
     <div class="grid" style="margin-top:17px">
       <div class="field"><label for="transport" data-i18n="transport">איך תתנייד?</label><select id="transport"><option value="car" data-i18n="car">רכב פרטי</option><option value="public" data-i18n="public">תחבורה ציבורית</option><option value="walk" data-i18n="walk">בעיקר ברגל</option><option value="mixed" data-i18n="mixed">שילוב</option></select></div>
-      <div class="field"><label for="trip-company" data-i18n="company">עם מי אתה מטייל?</label><select id="trip-company"><option value="solo" data-i18n="solo">לבד</option><option value="couple" data-i18n="couple">בזוג</option><option value="friends" data-i18n="friends">חברים</option><option value="family" data-i18n="family">משפחה</option></select></div>
     </div>
     <div class="note" data-i18n="noEmptyDays">נבנה לפחות פעילות אחת לכל יום. אם חסרות אפשרויות באזור או בתחום שבחרת, נציע פחות ביקורים או נבקש ממך להרחיב את האזור — לא נוסיף יעד מרוחק ללא אישור.</div>
     <div class="actions"><button class="primary" id="generate" data-i18n="generate">יצירת המסלול שלי ←</button><button class="secondary" data-view="home" data-i18n="backHome">חזרה לבית</button></div>
@@ -280,7 +295,7 @@ body.has-map-fullscreen .main{max-width:none}
 </section>
 
 <section id="route-view" class="hidden">
-  <div class="triphead"><div><div class="eyebrow" data-i18n="yourRoute">YOUR ISRAEL JOURNEY · V0.7.3</div><h2 id="trip-title">המסלול שלי</h2><div class="subtitle" id="trip-summary"></div><div class="stats" id="stats"></div></div><div class="actions" style="margin-top:0"><button class="secondary" id="back-edit" data-i18n="editPreferences">עריכת העדפות</button><button class="primary" id="save" data-i18n="saveTrip">שמירת הטיול</button></div></div>
+  <div class="triphead"><div><div class="eyebrow" data-i18n="yourRoute">YOUR ISRAEL JOURNEY · V0.7.4</div><h2 id="trip-title">המסלול שלי</h2><div class="subtitle" id="trip-summary"></div><div class="stats" id="stats"></div></div><div class="actions" style="margin-top:0"><button class="secondary" id="back-edit" data-i18n="editPreferences">עריכת העדפות</button><button class="primary" id="save" data-i18n="saveTrip">שמירת הטיול</button></div></div>
   <div id="plan-notice" class="plan-notice hidden"></div>
   <div class="workspace">
     <div class="panel" style="margin:0"><h2 data-i18n="dayPlan">התוכנית לפי ימים</h2><p class="sub" data-i18n="dayPlanSub">לחץ על מקום כדי להכיר אותו. רוצה משהו אחר? העוזר ישאל אותך מה מתאים.</p><div class="daytabs" id="daytabs"></div><div id="day-weather" class="weather-day" role="status" aria-live="polite"></div><div id="day-distance" class="day-distance"></div><div id="day-content"></div><div id="day-food-suggestions" class="food-suggestions"></div><div id="day-stay-suggestions" class="stay-suggestions"></div><div class="day-add"><label class="field-label" for="day-place-search" data-i18n="addPlace">הוספת מקום ליום הנבחר</label><div class="field"><input id="day-place-search" type="search" autocomplete="off" placeholder="כתוב עיר, אטרקציה, רחוב או כל מקום בארץ" aria-label="חיפוש והוספת מקום ליום" data-placeholder-he="כתוב עיר, אטרקציה, רחוב או כל מקום בארץ" data-placeholder-en="Search a city, attraction, street or address"><div id="day-place-results" class="pick-results" aria-live="polite"></div></div><div class="search-tools"><button type="button" id="day-search-online" class="mini assist">⌕ חפש בכל הארץ</button><button type="button" id="day-address" data-he="＋ כתובת מלאה" data-en="＋ Full address" class="mini">＋ כתובת מלאה</button><button type="button" id="day-pick-map" class="mini">⌖ סמן מקום על המפה</button><span id="day-search-status" class="search-feedback" role="status" aria-live="polite"></span></div><details class="quick-place-panel"><summary data-i18n="quickPlaceChoose">או בחר מקום מרשימת ההמלצות</summary><div class="day-add-row"><select id="add-place"></select><button class="secondary" id="add" data-i18n="add">הוספה</button></div></details></div></div>
@@ -288,23 +303,23 @@ body.has-map-fullscreen .main{max-width:none}
   </div>
 </section>
 
-<section id="explore-view" class="hidden"><div class="eyebrow">EXPLORE ISRAEL</div><h1 data-he="מפה פתוחה. כל האפשרויות שלך." data-en="Explore Israel on a clean map.">מפה פתוחה. כל האפשרויות שלך.</h1><p class="subtitle" data-he="מפה נקייה ללא סימוני טיול. חפש מקום או לחץ על המפה, ואחר כך בחר מה לעשות איתו." data-en="A clear map without trip markers. Search or click to choose a location.">מפה נקייה ללא סימוני טיול. חפש מקום או לחץ על המפה, ואחר כך בחר מה לעשות איתו.</p><div class="explore-workspace"><div class="panel explore-side"><div class="field"><label for="explore-query" data-he="חיפוש בכל הארץ" data-en="Search across Israel">חיפוש בכל הארץ</label><div class="search-tools"><input type="search" id="explore-query" placeholder="יישוב, מסעדה, בריכה, רחוב או אטרקציה" data-placeholder-he="יישוב, מסעדה, בריכה, רחוב או אטרקציה" data-placeholder-en="Town, restaurant, pool, address, attraction"><button type="button" class="primary" id="explore-search">חפש</button></div><div id="explore-status" class="hint" aria-live="polite"></div><div id="explore-results" class="explore-results"></div></div><div id="explore-picked" class="explore-picked hidden"><h3 id="explore-picked-name"></h3><p id="explore-picked-hint"></p><label for="explore-choice">מה לעשות עם המקום?</label><select id="explore-choice"><option value="must" data-he="הוסף כמקום חובה לטיול הבא" data-en="Must-see for next trip">הוסף כמקום חובה לטיול הבא</option><option value="start" data-he="השתמש כנקודת התחלה" data-en="Use as trip start">השתמש כנקודת התחלה</option><option value="day" data-he="הוסף ליום בטיול הנוכחי" data-en="Add to current trip day">הוסף ליום בטיול הנוכחי</option><option value="stay" data-he="השתמש כמקום לינה" data-en="Use as accommodation">השתמש כמקום לינה</option></select><button class="primary" id="explore-add" type="button" style="margin-top:10px;width:100%">הוסף מקום</button></div><div class="hint">המפה עצמאית ולא מציגה סימוני מסלול. מידע ומקומות זמינים בהתאם למקורות המפות הפתוחים.</div></div><div class="mapbox explore-mapbox"><div class="maptitle"><strong data-he="מפת ישראל" data-en="Israel map">מפת ישראל</strong><div class="map-head-right"><button class="mini" id="explore-expand" data-he="⛶ הגדל מפה" data-en="⛶ Full screen">⛶ הגדל מפה</button></div></div><div id="explore-map" class="explore-map"></div><p id="explore-map-status" class="hint" role="status">המפה דורשת חיבור לאינטרנט.</p></div></div></section>
+<section id="explore-view" class="hidden"><div class="eyebrow">EXPLORE ISRAEL</div><h1 data-he="מפה פתוחה. כל האפשרויות שלך." data-en="Explore Israel on a clean map.">מפה פתוחה. כל האפשרויות שלך.</h1><p class="subtitle" data-he="מפה נקייה ללא סימוני טיול. חפש מקום או לחץ על המפה, ואחר כך בחר מה לעשות איתו." data-en="A clear map without trip markers. Search or click to choose a location.">מפה נקייה ללא סימוני טיול. חפש מקום או לחץ על המפה, ואחר כך בחר מה לעשות איתו.</p><div class="explore-workspace"><div class="panel explore-side"><div class="field"><label for="explore-query" data-he="חיפוש בכל הארץ" data-en="Search across Israel">חיפוש בכל הארץ</label><div class="search-tools"><input type="search" id="explore-query" placeholder="תל אביב, יפו, מסעדה, חוף או כתובת" data-placeholder-he="יישוב, מסעדה, בריכה, רחוב או אטרקציה" data-placeholder-en="Town, restaurant, pool, address, attraction"><button type="button" class="primary" id="explore-search">חפש</button></div><div id="explore-status" class="hint" aria-live="polite"></div><div id="explore-results" class="explore-results"></div></div><div id="explore-picked" class="explore-picked hidden"><h3 id="explore-picked-name"></h3><p id="explore-picked-hint"></p><label for="explore-choice">מה לעשות עם המקום?</label><select id="explore-choice"><option value="must" data-he="הוסף כמקום חובה לטיול הבא" data-en="Must-see for next trip">הוסף כמקום חובה לטיול הבא</option><option value="start" data-he="השתמש כנקודת התחלה" data-en="Use as trip start">השתמש כנקודת התחלה</option><option value="day" data-he="הוסף ליום בטיול הנוכחי" data-en="Add to current trip day">הוסף ליום בטיול הנוכחי</option><option value="stay" data-he="השתמש כמקום לינה" data-en="Use as accommodation">השתמש כמקום לינה</option></select><button class="primary" id="explore-add" type="button" style="margin-top:10px;width:100%">הוסף מקום</button></div><div class="hint">המפה עצמאית ולא מציגה סימוני מסלול. מידע ומקומות זמינים בהתאם למקורות המפות הפתוחים.</div></div><div class="mapbox explore-mapbox"><div class="maptitle"><strong data-he="מפת ישראל" data-en="Israel map">מפת ישראל</strong><div class="map-head-right"><button class="mini" id="explore-expand" data-he="⛶ הגדל מפה" data-en="⛶ Full screen">⛶ הגדל מפה</button></div></div><div id="explore-map" class="explore-map"></div><p id="explore-map-status" class="hint" role="status">המפה דורשת חיבור לאינטרנט.</p></div></div></section>
 <section id="saved-view" class="hidden"><div class="eyebrow" data-i18n="savedEyebrow">YOUR TRIPS</div><h1 data-i18n="savedTitle">הטיולים שלך.</h1><p class="subtitle" data-i18n="savedSub">כל הטיולים ששמרת במקום אחד. אפשר לפתוח טיול ולהמשיך לערוך אותו.</p><div id="saved-list" style="margin-top:20px"></div><div class="actions"><button class="primary" data-open-create data-i18n="newTrip">יצירת טיול חדש</button><button class="secondary" data-view="home" data-i18n="backHome">חזרה לבית</button></div></section>
 </main>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <div class="overlay hidden" id="place-overlay"><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="place-title"><div class="dialog-head"><div><h2 id="place-title"></h2><p id="place-subtitle"></p></div><button class="close" data-close="place-overlay" aria-label="Close">×</button></div><div class="dialog-body" id="place-body"></div></div></div>
 <div class="overlay hidden" id="assistant-overlay"><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="assistant-title"><div class="dialog-head"><div><h2 id="assistant-title" data-i18n="assistantTitle">בוא נמצא משהו שמתאים יותר.</h2><p data-i18n="assistantIntro">אני אשאל כמה שאלות קצרות ואציע חלופה שמתאימה ליום שלך.</p></div><button class="close" data-close="assistant-overlay" aria-label="Close">×</button></div><div class="dialog-body" id="assistant-body"></div></div></div>
-<div class="onboard hidden" id="onboard"><div class="onboard-card"><div class="onboard-top"><div class="brand"><span class="mark mark-logo"><img src="./icon-192.png?v=073" width="34" height="34" alt="" aria-hidden="true"></span><span>Discover Israel</span></div><span class="version">מתאימים את הטיול</span></div><div class="progress-track"><div class="progress-fill" id="onboard-progress" style="width:25%"></div></div><div id="onboard-content"></div></div></div>
-<div class="language-gate" id="language-gate"><div class="language-card"><div class="mark mark-logo"><img src="./icon-192.png?v=073" width="34" height="34" alt="" aria-hidden="true"></div><div class="eyebrow">DISCOVER ISRAEL · VERSION 0.7.3</div><h1>Welcome / ברוכים הבאים</h1><p>בחר את שפת הממשק. אפשר לשנות אותה גם בהמשך מתוך האתר.</p><div class="language-options"><button class="language-choice" data-set-lang="he">עברית<small>ממשק בעברית</small></button><button class="language-choice" data-set-lang="en">English<small>English interface</small></button></div><div class="coming">Additional languages will be added in a later version.</div></div></div>
+<div class="onboard hidden" id="onboard"><div class="onboard-card"><button class="onboard-exit" id="onboard-exit" type="button" aria-label="Close preferences" title="Close">×</button><div class="onboard-top"><div class="brand"><span class="mark mark-logo"><img src="./icon-192.png?v=074" width="34" height="34" alt="" aria-hidden="true"></span><span>Discover Israel</span></div><span class="version">מתאימים את הטיול</span></div><div class="progress-track"><div class="progress-fill" id="onboard-progress" style="width:25%"></div></div><div id="onboard-content"></div></div></div>
+<div class="language-gate" id="language-gate"><div class="language-card"><div class="mark mark-logo"><img src="./icon-192.png?v=074" width="34" height="34" alt="" aria-hidden="true"></div><div class="eyebrow">DISCOVER ISRAEL · VERSION 0.7.4</div><h1>Welcome / ברוכים הבאים</h1><p>בחר את שפת הממשק. אפשר לשנות אותה גם בהמשך מתוך האתר.</p><div class="language-options"><button class="language-choice" data-set-lang="he">עברית<small>Hebrew</small></button><button class="language-choice" data-set-lang="en">English<small>English</small></button><button class="language-choice" data-set-lang="ar">العربية<small>Arabic</small></button><button class="language-choice" data-set-lang="ru">Русский<small>Russian</small></button><button class="language-choice" data-set-lang="fr">Français<small>French</small></button><button class="language-choice" data-set-lang="es">Español<small>Spanish</small></button><button class="language-choice" data-set-lang="de">Deutsch<small>German</small></button><button class="language-choice" data-set-lang="it">Italiano<small>Italian</small></button><button class="language-choice" data-set-lang="pt">Português<small>Portuguese</small></button><button class="language-choice" data-set-lang="zh">中文<small>Chinese</small></button><button class="language-choice" data-set-lang="ja">日本語<small>Japanese</small></button><button class="language-choice" data-set-lang="tr">Türkçe<small>Turkish</small></button></div><p class="language-support-note">Interface text is translated where available; untranslated descriptions appear in English. Place names may remain in their original language.</p></div></div>
 
-<div class="overlay hidden" id="origin-overlay"><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="origin-dialog-title"><div class="dialog-head"><div><h2 id="origin-dialog-title" data-i18n="originDialogTitle">סמן את נקודת ההתחלה</h2><p data-i18n="originDialogIntro">לחץ על מיקום הבית, המלון או כל נקודה אחרת במפה.</p></div><button class="close" type="button" data-close="origin-overlay" aria-label="Close">×</button></div><div class="dialog-body"><div class="origin-map-inner"><div id="origin-map"></div></div><p id="origin-map-status" class="origin-map-status" role="status"></p><div class="search-tools"><button type="button" id="picker-address" data-he="⌕ כתובת מלאה" data-en="⌕ Full address" class="mini">⌕ כתובת מלאה</button><button type="button" id="origin-map-retry" class="mini">↻ נסה לטעון שוב</button><span class="search-feedback" data-i18n="originMapBackup">אפשר גם לחפש מקום כאן, אם המפה אינה מופיעה.</span></div><div class="field"><label for="origin-map-search" data-i18n="originSearchInMap">חיפוש מקום במפה</label><input type="search" id="origin-map-search" autocomplete="off" placeholder="לדוגמה: נס ציונה" data-placeholder-he="לדוגמה: נס ציונה" data-placeholder-en="For example: Ness Ziona"><div id="origin-map-results" class="pick-results"></div><span id="origin-map-search-status" class="search-feedback" role="status"></span></div><div class="field"><label for="origin-manual-coords" id="manual-coords-label">או הדבק קואורדינטות (קו רוחב, קו אורך)</label><div class="day-add-row"><input id="origin-manual-coords" type="text" placeholder="31.9292, 34.7988" inputmode="decimal"><button type="button" class="secondary" id="origin-use-coords">השתמש בנקודה</button></div></div><div class="field"><label for="origin-name" data-i18n="originName">איך נקרא למקום?</label><input id="origin-name" maxlength="80" placeholder="המלון שלי"></div><div class="dialog-actions"><button class="secondary" type="button" data-close="origin-overlay" data-i18n="cancel">ביטול</button><button class="primary" type="button" id="origin-save" disabled data-i18n="originSave">שמור נקודת התחלה</button></div></div></div></div>
+<div class="overlay hidden" id="origin-overlay"><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="origin-dialog-title"><div class="dialog-head"><div><h2 id="origin-dialog-title" data-i18n="originDialogTitle">סמן את נקודת ההתחלה</h2><p data-i18n="originDialogIntro">לחץ על מיקום הבית, המלון או כל נקודה אחרת במפה.</p></div><button class="close" type="button" data-close="origin-overlay" aria-label="Close">×</button></div><div class="dialog-body"><div class="origin-map-inner"><div id="origin-map"></div></div><p id="origin-map-status" class="origin-map-status" role="status"></p><div class="search-tools"><button type="button" id="picker-address" data-he="⌕ כתובת מלאה" data-en="⌕ Full address" class="mini">⌕ כתובת מלאה</button><button type="button" id="origin-map-retry" class="mini">↻ נסה לטעון שוב</button><span class="search-feedback" data-i18n="originMapBackup">אפשר גם לחפש מקום כאן, אם המפה אינה מופיעה.</span></div><div class="field"><label for="origin-map-search" data-i18n="originSearchInMap">חיפוש מקום במפה</label><input type="search" id="origin-map-search" autocomplete="off" placeholder="לדוגמה: תל אביב" data-placeholder-he="לדוגמה: תל אביב" data-placeholder-en="For example: Ness Ziona"><div id="origin-map-results" class="pick-results"></div><span id="origin-map-search-status" class="search-feedback" role="status"></span></div><div class="field"><label for="origin-manual-coords" id="manual-coords-label">או הדבק קואורדינטות (קו רוחב, קו אורך)</label><div class="day-add-row"><input id="origin-manual-coords" type="text" placeholder="31.9292, 34.7988" inputmode="decimal"><button type="button" class="secondary" id="origin-use-coords">השתמש בנקודה</button></div></div><div class="field"><label for="origin-name" data-i18n="originName">איך נקרא למקום?</label><input id="origin-name" maxlength="80" placeholder="המלון שלי"></div><div class="dialog-actions"><button class="secondary" type="button" data-close="origin-overlay" data-i18n="cancel">ביטול</button><button class="primary" type="button" id="origin-save" disabled data-i18n="originSave">שמור נקודת התחלה</button></div></div></div></div>
 <div class="overlay hidden" id="capacity-overlay"><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="capacity-title"><div class="dialog-head"><div><h2 id="capacity-title" data-i18n="capacityTitle">רגע, הטיול הזה צפוף</h2><p data-i18n="capacitySubtitle">חשוב לנו לא לוותר על מקומות שסימנת כחובה.</p></div><button class="close" type="button" data-close="capacity-overlay" aria-label="Close">×</button></div><div class="dialog-body"><div class="capacity-box" id="capacity-text"></div><div class="dialog-actions"><button class="secondary" type="button" id="capacity-edit" data-i18n="capacityEdit">אחזור ואצמצם</button><button class="primary" type="button" id="capacity-continue" data-i18n="capacityContinue">הכנס את כולם למסלול</button></div></div></div></div>
 
 <div class="overlay hidden" id="address-overlay"><div class="dialog address-dialog" role="dialog" aria-modal="true" aria-labelledby="address-title">
  <div class="dialog-head"><div><h2 id="address-title">הוספת כתובת מדויקת</h2><p id="address-intro">בחר עיר ורחוב, הוסף מספר בית, ונמצא את המיקום.</p></div><button class="close" type="button" data-close="address-overlay" aria-label="Close">×</button></div>
  <div class="dialog-body">
-  <div class="grid"><div class="field"><label for="addr-city" id="addr-city-label">יישוב / עיר</label><input id="addr-city" type="text" autocomplete="off" placeholder="לדוגמה: נס ציונה"><div id="addr-city-options" class="pick-results address-suggestions"></div></div>
-  <div class="field"><label for="addr-street" id="addr-street-label">רחוב</label><input id="addr-street" type="text" autocomplete="off" placeholder="לדוגמה: ויצמן"><div id="addr-street-options" class="pick-results address-suggestions"></div></div></div>
+  <div class="grid"><div class="field"><label for="addr-city" id="addr-city-label">יישוב / עיר</label><input id="addr-city" type="text" autocomplete="off" placeholder="לדוגמה: תל אביב"><div id="addr-city-options" class="pick-results address-suggestions"></div></div>
+  <div class="field"><label for="addr-street" id="addr-street-label">רחוב</label><input id="addr-street" type="text" autocomplete="off" placeholder="לדוגמה: דיזנגוף"><div id="addr-street-options" class="pick-results address-suggestions"></div></div></div>
   <div class="grid address-small-fields"><div class="field"><label for="addr-house" id="addr-house-label">מספר בית</label><input id="addr-house" type="text" inputmode="text" maxlength="18" placeholder="לדוגמה: 5"></div>
    <div class="field"><label for="addr-apt" id="addr-apt-label">דירה / קומה (לא חובה)</label><input id="addr-apt" type="text" maxlength="35" placeholder="לדוגמה: דירה 4"></div></div>
   <div class="field address-label-field"><label for="addr-label" id="addr-display-label">שם אישי למקום (רשות)</label><input id="addr-label" type="text" maxlength="90" placeholder="לדוגמה: המלון שלי"></div>
@@ -315,14 +330,17 @@ body.has-map-fullscreen .main{max-width:none}
   <p class="address-accuracy-note" id="addr-accuracy-note">לא נסמן מספר בית כמדויק אם שירות המפות לא הצליח לאמת אותו. במקרה כזה אפשר לבחור מיקום ידנית.</p>
  </div>
 </div></div>
+<div id="busy-overlay" class="busy-overlay hidden" role="status" aria-live="polite" aria-label="Loading"><div class="busy-card"><div class="busy-visual"><span></span><span></span><span></span></div><h2 id="busy-title">מחפש מקומות...</h2><p id="busy-detail">אנחנו מתכננים את המסלול שלך.</p><div class="busy-indeterminate"></div></div></div>
+<div id="tutorial-overlay" class="overlay hidden"><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="tutorial-title"><div class="dialog-head"><h2 id="tutorial-title">מדריך Discover Israel</h2><button class="close" type="button" id="tutorial-close" aria-label="Close">×</button></div><div class="dialog-body"><div id="tutorial-content"></div><div class="dialog-actions"><button type="button" class="secondary" id="tutorial-back">Back</button><button type="button" class="primary" id="tutorial-next">Next</button><button type="button" class="mini" id="tutorial-skip">Skip</button></div></div></div></div>
+<div id="user-profile-overlay" class="overlay hidden"><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="user-profile-title"><div class="dialog-head"><h2 id="user-profile-title">הפרופיל שלי</h2><button class="close" type="button" id="user-profile-close" aria-label="Close">×</button></div><div class="dialog-body"><p id="user-profile-intro" class="hint">Saved on this device, no registration required.</p><div class="grid"><div class="field"><label id="user-name-label" for="user-display-name">Display name</label><input id="user-display-name" type="text" maxlength="48" autocomplete="nickname"></div><div class="field"><label id="user-country-label" for="user-country">Country of residence</label><select id="user-country"><option value="">Prefer not to say</option><option value="IL">Israel</option><option value="US">United States</option><option value="GB">United Kingdom</option><option value="FR">France</option><option value="DE">Germany</option><option value="RU">Russia</option><option value="ES">Spain</option><option value="CA">Canada</option><option value="AU">Australia</option><option value="other">Other</option></select></div></div><div class="field"><label id="user-language-label" for="user-preferred-language">Preferred language</label><select id="user-preferred-language"></select></div><p id="user-profile-summary" class="hint"></p><div class="dialog-actions"><button class="secondary" id="user-profile-preferences" type="button">Edit trip preferences</button><button class="secondary" id="user-profile-cancel" type="button">Cancel</button><button class="primary" id="user-profile-save" type="button">Save profile</button></div></div></div></div>
 <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@5.24.1/dist/maplibre-gl.js" crossorigin="anonymous"></script>
 <script>
 (()=>{
 'use strict';
 const $=id=>document.getElementById(id);const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const T={
- he:{startTitle:"מאיפה מתחילים את הטיול?",newFeature:"משופר ב־0.7.3",startDescription:"בחר מקום מוכר, או סמן את הבית / המלון שלך על המפה. אפשר להשאיר ריק.",startSearchLabel:"חיפוש נקודת התחלה",startPickOnMap:"⌖ בחירה על המפה",startNotChosen:"לא נבחרה נקודת התחלה — אפשר להמשיך גם ככה.",startClear:"הסר את נקודת ההתחלה",startPopular:"מקום מוכר",startPlace:"נקודת עניין",startNoMatch:"לא מצאת את המקום? לחץ על ״בחירה על המפה״ וסמן אותו ידנית.",returnTitle:"חוזרים לנקודת ההתחלה בסוף כל יום",returnHint:"מתאים למי שישנים באותו מלון או בית בכל לילה. זהו תכנון משוער, לא ניווט כבישים.",mustTitle:"יש מקומות שאתה לא רוצה לפספס?",mustDescription:"בחר מקומות שחייבים להופיע במסלול. לא נחליף אותם אוטומטית.",mustSearchLabel:"חיפוש מקום",mustEmpty:"לא נבחרו מקומות חובה. ניתן להוסיף כמה שרוצים.",mustRemove:"הסרת מקום חובה",mustNoMatch:"לא מצאנו התאמה ברשימה. אפשר לחפש מקום נוסף ברשת.",mustNoSuggestions:"בחרת את ההמלצות הנפוצות. אפשר לחפש מקום אחר.",mustOnline:"⌕ חיפוש מקומות נוספים ברשת",mustSearchMin:"הקלד לפחות שני תווים לחיפוש.",mustSearchOffline:"אין חיבור לרשת. אפשר לבחור מקומות מתוך הרשימה.",mustSearching:"מחפש מקומות ב־OpenStreetMap…",mustNoOnline:"לא נמצאו תוצאות נוספות. נסה שם אחר.",mustSearchFailed:"החיפוש ברשת אינו זמין כרגע. נסה שוב מאוחר יותר.",mustLocked:"זהו מקום חובה. כדי להחליפו או להסירו, בטל תחילה את סימון החובה.",mustRouteTag:"★ מקום חובה",mustUnpin:"ביטול מקום חובה",mustPin:"סמן כמקום חובה",googleDirections:"פתיחת ניווט ב־Google Maps",wazeDriving:"Waze מיועד לניווט ברכב. פתיחת האפליקציה תלויה במכשיר.",getDirections:"איך מגיעים?",mapSelectedDay:"היום הנבחר",mapWholeTrip:"כל הטיול",mapAllDays:"מפת כל הטיול",startPointShort:"נקודת התחלה",straightLine:"מרחק בקו אווירי (לא נסיעה):",km:"ק״מ",returnNote:"חזרה לנקודת ההתחלה",previousDayEnd:"סיום היום הקודם",originDialogTitle:"סמן את נקודת ההתחלה",originDialogIntro:"לחץ על מיקום הבית, המלון או כל נקודה אחרת במפה.",originMapHint:"לחץ על המפה כדי לסמן נקודת התחלה. המפה דורשת חיבור לאינטרנט.",originMapUnavailable:"לא ניתן לטעון את המפה. אפשר לבחור מקום מתוך הרשימה במסך התכנון.",originPointChosen:"נקודת התחלה סומנה — אפשר לתת לה שם ולשמור.",originName:"איך נקרא למקום?",originSave:"שמירת נקודת התחלה",capacityTitle:"רגע, הטיול הזה צפוף",capacitySubtitle:"חשוב לנו לא לוותר על מקומות שסימנת כחובה.",capacityEdit:"אחזור ואצמצם",capacityContinue:"הכנס את כולם למסלול",mapNote:"מפה חינמית של OpenFreeMap, עם נתונים של OpenStreetMap. הקווים הישרים מראים את סדר התחנות, לא מסלול בכבישים. לניווט אמיתי לחץ על Google Maps או Waze.",broadened:"כדי למלא את הימים, הוספנו גם מקומות מחוץ לאזור או לתחומי העניין שבחרת. המרחקים הם בקו אווירי בלבד; כדאי לבדוק זמינות, פתיחה והגעה לפני היציאה.",repeatNotice:"אין מספיק מקומות שונים במאגר לתכנון כל הימים שביקשת, ולכן חלק מההצעות עשויות לחזור. אפשר לשנות את האזור או את מספר הימים.",navHome:'ראשי',navPlan:'תכנון טיול',navSaved:'טיולים שמורים',heroEyebrow:'DISCOVER MORE · EXPERIENCE ISRAEL',heroTitle:'כל ישראל. בקצב שלך.',heroText:'מהנחלים וההרים בצפון ועד המדבר והים בדרום — בנה טיול שמתחבר למה שאתה אוהב, עם חוויות שמתאימות בדיוק לדרך שלך.',startPlanning:'בואו נתכנן טיול ←',exploreRegions:'לגלות את האזורים',regionsTitle:'לאן בא לך לנסוע?',regionsSub:'בחר אזור כדי להתחיל לגלות מה מחכה בו.',north:'הצפון הירוק',northSub:'מים, הרים, מסלולים ונופים',center:'החוף והמרכז',centerSub:'ים, עיר, תרבות ואוכל',jerusalem:'ירושלים והסביבה',jerusalemSub:'היסטוריה, סמטאות ונוף',south:'הדרום והמדבר',southSub:'מרחבים, מכתשים ושקט',whyTitle:'טיול שמרגיש שלך',whySub:'לא עוד רשימת אתרים — תכנון שמתחיל במה שמתאים לך.',feature1Title:'מתכננים לפי הקצב שלך',feature1Text:'מעדיפים יום רגוע או מלא חוויות? בוחרים את הקצב ואת סוג הפעילויות.',feature2Title:'רואים את הטיול על המפה',feature2Text:'כל יום מסודר בפני עצמו, ואפשר לפתוח מידע על כל מקום ולערוך את התוכנית.',photoCredits:'קרדיטים לתמונות:',planEyebrow:'YOUR JOURNEY STARTS HERE',planTitle:'בוא נבנה לך טיול.',planIntro:'כמה שאלות קצרות יעזרו להבין מה מתאים לך — כדי שכל יום יכלול פעילות שמתאימה לסגנון שלך.',basicsTitle:'קצת פרטים על הטיול',basicsSub:'אפשר לשנות את כל הפרטים גם בהמשך.',tripName:'שם הטיול',days:'מספר ימים',budget:'תקציב כולל (₪)',region:'אזור מועדף',allIsrael:'כל הארץ',interestsTitle:'מה מעניין אותך?',interestsSub:'אפשר לבחור כמה תחומי עניין, ולהוסיף משלך.',otherPrompt:'מה עוד תרצה לשלב בטיול? כתוב כמה דברים שתרצה.',travelStyleTitle:'איך אתה אוהב לטייל?',travelStyleSub:'הבחירה הזו משפיעה על כמות הפעילויות שנציע בכל יום.',relaxed:'רגוע',relaxedSub:'פעילות אחת ביום, עם זמן לנוח ולגלות.',balanced:'מאוזן',balancedSub:'כמה חוויות ביום, בלי להעמיס.',active:'עמוס ואקטיבי',activeSub:'כמה שיותר חוויות וניצול של היום.',transport:'איך תתנייד?',car:'רכב פרטי',public:'תחבורה ציבורית',walk:'בעיקר ברגל',mixed:'שילוב',company:'עם מי אתה מטייל?',solo:'לבד',couple:'בזוג',friends:'חברים',family:'משפחה',noEmptyDays:'נבנה לפחות פעילות אחת לכל יום. אם חסרות אפשרויות באזור או בתחום שבחרת, נציע פחות ביקורים או נבקש ממך להרחיב את האזור — לא נוסיף יעד מרוחק ללא אישור.',generate:'יצירת המסלול שלי ←',backHome:'חזרה לבית',yourRoute:'YOUR ISRAEL JOURNEY · V0.7.3',editPreferences:'עריכת העדפות',saveTrip:'שמירת הטיול',dayPlan:'התוכנית לפי ימים',dayPlanSub:'לחץ על מקום כדי להכיר אותו. רוצה משהו אחר? העוזר ישאל אותך מה מתאים.',addPlace:'הוספת מקום ליום הנבחר',add:'הוספה',mapTitle:'מפת הטיול',routeSpots:'מקומות ביום הזה',mapNote:'מפה חינמית של OpenFreeMap, עם נתונים של OpenStreetMap. הסמנים מראים את מיקום המקומות, לא מסלול נסיעה. זמני נסיעה וניווט עדיין אינם מחושבים.',savedEyebrow:'YOUR TRIPS',savedTitle:'הטיולים שלך.',savedSub:'כל הטיולים ששמרת במקום אחד. אפשר לפתוח טיול ולהמשיך לערוך אותו.',newTrip:'יצירת טיול חדש',assistantTitle:'בוא נמצא משהו שמתאים יותר.',assistantIntro:'אני אשאל כמה שאלות קצרות ואציע חלופה שמתאימה ליום שלך.',day:'יום',places:'מקומות',activities:'פעילויות',details:'לפרטים ותמונות',change:'שינוי בעזרת העוזר',moveUp:'↑ למעלה',moveDown:'↓ למטה',remove:'הסרה',viewPlace:'לפרטים',empty:'אין עדיין פעילות ביום הזה.',save:'שמירה',open:'פתיחה',delete:'מחיקה',saved:'הטיול נשמר בהצלחה.',deleted:'הטיול נמחק.',noBudget:'יש להזין תקציב תקין בשקלים.',badDays:'יש לבחור מספר ימים בין 1 ל־30.',budgetTag:'תקציב כולל',travelPace:'קצב',relaxedTag:'רגוע',balancedTag:'מאוזן',activeTag:'אקטיבי',transportLabel:'התניידות',carTag:'רכב',publicTag:'תחבורה ציבורית',walkTag:'ברגל',mixedTag:'שילוב',companions:'הרכב',customInterest:'תחומי עניין נוספים',daysCount:'ימים',activitiesCount:'נקודות עניין',broadened:'כדי למלא את כל הימים, הרחבנו את ההצעות מעבר לאזור או לתחומי העניין שבחרת. זהו מאגר הדגמה מוגבל; כדאי לבדוק התאמה ומיקום לפני הנסיעה.',repeatNotice:'מאגר הדוגמה לא כולל מספיק נקודות שונות למשך הטיול הזה, ולכן חלק מההצעות חוזרות. אפשר להוסיף מקומות משלך או לבחור אזור אחר.',needReplace:'כדי שלא יישאר יום ריק, הוסף פעילות חלופית לפני הסרת האחרונה.',choosePlace:'בחר מקום להוספה',noMorePlaces:'אין עוד מקומות זמינים במאגר להוספה.',added:'המקום נוסף ליום.',replacementTitle:'מה היית מעדיף במקום הזה?',replacementType:'איזה סוג חוויה מתאים לך יותר?',easy:'קליל',moderate:'בינוני',hard:'אתגרי',effort:'כמה מאמץ מתאים לך?',extraQuestion:'יש עוד משהו שכדאי לדעת?',extraPlaceholder:'למשל: לא רחוק מהמסלול, מתאים לילדים, בלי הרבה הליכה...',any:'אין העדפה',natureOpt:'טבע ונוף',historyOpt:'היסטוריה',foodOpt:'אוכל',cultureOpt:'תרבות',waterOpt:'מים וים',adventureOpt:'הרפתקה',submitReplacement:'מצא לי חלופה',cancel:'ביטול',replacementDone:'מצאתי חלופה והחלפתי את המקום במסלול.',noReplacement:'לא מצאתי חלופה מדויקת במאגר הדוגמה. אפשר לשנות את ההעדפות או להוסיף מקום אחר.',extra:'מידע נוסף',regionPhotoNote:'תמונות להשראה מהאזור',photoCredit:'מקור התמונה',imageUnavailable:'לא ניתן לטעון את התמונה כרגע.',moreInfo:'מה מיוחד במקום?',timeNote:'מידע כללי בלבד — יש לבדוק שעות פתיחה, תנאי כניסה והנחיות לפני ביקור.',planSaved:'הטיול נשמר במכשיר ובדפדפן הזה בלבד.',otherIn:'אחר',routeTitle:'המסלול שלי',dateSaved:'נשמר',selectLanguage:'בחירת שפה',langChanged:'שפת הממשק עודכנה.',noSaved:'עדיין לא שמרת טיולים. אחרי יצירת מסלול, לחץ על „שמירת הטיול”.',addedCustom:'הפעילות נוספה.',interestOnly:'ההתאמה לתחומי עניין נוספים היא בסיסית בגרסה זו.',tripStyle:'סגנון הטיול',selectedRegion:'אזור',photoBy:'צילום',languagePrompt:'בחר את שפת הממשק.',mapStyleLabel:'מראה המפה',mapStyleColor:'צבעונית',mapStyleLight:'נקייה',mapLoading:'טוענים את המפה…',mapLoadingText:'המפה דורשת חיבור לאינטרנט.',mapError:'לא הצלחנו להציג את המפה',mapErrorText:'בדוק שיש חיבור לאינטרנט ולחץ על ״נסה שוב״. רשימת המקומות במסלול עדיין זמינה.',mapRetry:'נסה שוב'},
- en:{startTitle:"Where will your trip begin?",newFeature:"Improved in 0.7.3",startDescription:"Choose a familiar place or mark your home / hotel on the map. You may also leave this blank.",startSearchLabel:"Search for a starting point",startPickOnMap:"⌖ Pick on map",startNotChosen:"No starting point selected — you can still continue.",startClear:"Remove starting point",startPopular:"Popular location",startPlace:"Place",startNoMatch:"Not listed? Select “Pick on map” to mark any location.",returnTitle:"Return to the starting point every evening",returnHint:"Useful when staying in the same hotel or home each night. This is approximate planning, not road navigation.",mustTitle:"Places you absolutely want to visit?",mustDescription:"Choose must-see places. We will not automatically replace them.",mustSearchLabel:"Find a place",mustEmpty:"No must-see places yet. Add as many as you like.",mustRemove:"Remove must-see place",mustNoMatch:"Not found in the list. Try an online search.",mustNoSuggestions:"You have chosen the suggested places. Search for another location.",mustOnline:"⌕ Search for more places online",mustSearchMin:"Enter at least two characters.",mustSearchOffline:"No network connection. You can still choose listed places.",mustSearching:"Searching OpenStreetMap…",mustNoOnline:"No additional places found. Try another name.",mustSearchFailed:"Online search is unavailable right now. Try again later.",mustLocked:"This is a must-see place. Unmark it before removing or replacing it.",mustRouteTag:"★ Must-see",mustUnpin:"Unmark must-see",mustPin:"Mark as must-see",googleDirections:"Open directions in Google Maps",wazeDriving:"Waze is for driving. Opening the app depends on your device.",getDirections:"Get directions",mapSelectedDay:"Selected day",mapWholeTrip:"Entire trip",mapAllDays:"Full itinerary map",startPointShort:"Starting point",straightLine:"Straight-line distance (not driving):",km:"km",returnNote:"Return to starting point",previousDayEnd:"Previous day’s end",originDialogTitle:"Choose your starting point",originDialogIntro:"Click your hotel, home or any other location on the map.",originMapHint:"Click the map to place your starting point. Internet connection is required.",originMapUnavailable:"The map could not be loaded. Choose a listed place instead.",originPointChosen:"Starting point marked — name and save it.",originName:"Give this place a name",originSave:"Save starting point",capacityTitle:"This itinerary looks quite full",capacitySubtitle:"We will not silently skip any of your must-see places.",capacityEdit:"Go back and reduce",capacityContinue:"Include every must-see place",mapNote:"Free map by OpenFreeMap using OpenStreetMap data. Straight lines show stop order, not roads. For actual navigation choose Google Maps or Waze.",broadened:"To fill the days, we added places beyond your region or chosen interests. Distances are straight-line estimates only; check access, hours and availability before travelling.",repeatNotice:"There are not enough unique places in this demo catalogue for every day, so some suggestions may repeat. Adjust the region or days.",navHome:'Home',navPlan:'Plan a trip',navSaved:'Saved trips',heroEyebrow:'DISCOVER MORE · EXPERIENCE ISRAEL',heroTitle:'All of Israel. Your pace.',heroText:'From northern streams and mountains to the southern desert and sea — build a trip around what you love, with experiences that fit your style.',startPlanning:'Start planning →',exploreRegions:'Explore regions',regionsTitle:'Where would you like to go?',regionsSub:'Choose a region and start exploring what it has to offer.',north:'The green north',northSub:'Water, mountains, trails and views',center:'Coast & central Israel',centerSub:'Sea, city, culture and food',jerusalem:'Jerusalem & surroundings',jerusalemSub:'History, lanes and views',south:'The south & desert',southSub:'Open spaces, craters and quiet',whyTitle:'A trip that feels like yours',whySub:'More than a list of places — planning that starts with what suits you.',feature1Title:'Plan at your own pace',feature1Text:'Prefer a relaxed day or a full schedule? Choose your pace and the kinds of activities you enjoy.',feature2Title:'See your trip on the map',feature2Text:'Each day is organized separately. Open a place to learn more and edit your plan.',photoCredits:'Photo credits:',planEyebrow:'YOUR JOURNEY STARTS HERE',planTitle:'Let’s build your trip.',planIntro:'A few quick questions help us understand what suits you — so every day includes an activity that matches your style.',basicsTitle:'A few trip details',basicsSub:'You can update these details later.',tripName:'Trip name',days:'Number of days',budget:'Total budget (₪)',region:'Preferred region',allIsrael:'All Israel',interestsTitle:'What are you interested in?',interestsSub:'Choose more than one interest and add your own.',otherPrompt:'What else would you like to include? Add as many things as you like.',travelStyleTitle:'How do you like to travel?',travelStyleSub:'Your choice affects how many activities we suggest each day.',relaxed:'Relaxed',relaxedSub:'One activity each day, with time to rest and explore.',balanced:'Balanced',balancedSub:'A few experiences each day without overloading it.',active:'Full & active',activeSub:'As many experiences as possible throughout the day.',transport:'How will you get around?',car:'Private car',public:'Public transport',walk:'Mostly walking',mixed:'A mix',company:'Who are you travelling with?',solo:'Solo',couple:'As a couple',friends:'Friends',family:'Family',noEmptyDays:'We will include at least one activity for every day. If there are not enough options in your region or interest area, we will broaden the suggestions so no day is left empty.',generate:'Create my itinerary →',backHome:'Back home',yourRoute:'YOUR ISRAEL JOURNEY · V0.7.3',editPreferences:'Edit preferences',saveTrip:'Save trip',dayPlan:'Your days',dayPlanSub:'Select a place to learn more. Want something different? The assistant will ask what suits you.',addPlace:'Add a place to this day',add:'Add',mapTitle:'Trip map',routeSpots:'Places for this day',mapNote:'Free OpenFreeMap map using OpenStreetMap data. Pins show place locations, not a driving route. Travel times and navigation are not yet calculated.',savedEyebrow:'YOUR TRIPS',savedTitle:'Your trips.',savedSub:'All your saved trips in one place. Open a trip to keep editing it.',newTrip:'Create a new trip',assistantTitle:'Let’s find a better fit.',assistantIntro:'I’ll ask a few short questions and suggest an alternative that suits your day.',day:'Day',places:'places',activities:'activities',details:'Details & photos',change:'Find an alternative',moveUp:'↑ Up',moveDown:'↓ Down',remove:'Remove',viewPlace:'Details',empty:'No activity has been added to this day yet.',save:'Save',open:'Open',delete:'Delete',saved:'Trip saved successfully.',deleted:'Trip deleted.',noBudget:'Enter a valid budget in shekels.',badDays:'Choose between 1 and 30 days.',budgetTag:'Total budget',travelPace:'Pace',relaxedTag:'Relaxed',balancedTag:'Balanced',activeTag:'Active',transportLabel:'Transport',carTag:'Car',publicTag:'Public transport',walkTag:'Walking',mixedTag:'Mixed',companions:'Travelling with',customInterest:'Additional interests',daysCount:'days',activitiesCount:'attractions',broadened:'To fill every day, we broadened suggestions beyond your selected region or interests. This is a limited demo catalogue; check suitability and location before travelling.',repeatNotice:'The demo catalogue does not contain enough unique places for this trip length, so some suggestions repeat. Add your own places or choose another region.',needReplace:'To keep this day from becoming empty, add a replacement before removing its last activity.',choosePlace:'Choose a place to add',noMorePlaces:'No more places are available in this demo catalogue.',added:'Place added to the day.',replacementTitle:'What would you prefer instead?',replacementType:'What kind of experience would suit you better?',easy:'Easy',moderate:'Moderate',hard:'Challenging',effort:'How much effort would you like?',extraQuestion:'Anything else we should know?',extraPlaceholder:'For example: closer to the route, child-friendly, not too much walking...',any:'No preference',natureOpt:'Nature & views',historyOpt:'History',foodOpt:'Food',cultureOpt:'Culture',waterOpt:'Water & sea',adventureOpt:'Adventure',submitReplacement:'Find an alternative',cancel:'Cancel',replacementDone:'Found an alternative and updated your itinerary.',noReplacement:'Could not find a precise match in the demo catalogue. Try adjusting your preferences or add another place.',extra:'More information',regionPhotoNote:'Images for inspiration from this region',photoCredit:'Photo source',imageUnavailable:'The image could not be loaded right now.',moreInfo:'What makes this place special?',timeNote:'General information only — check opening hours, entry conditions and visitor guidance before going.',planSaved:'This trip is saved only in this browser on this device.',otherIn:'Other',routeTitle:'My itinerary',dateSaved:'Saved',selectLanguage:'Choose language',langChanged:'Interface language updated.',noSaved:'You have no saved trips yet. After creating an itinerary, select “Save trip”.',addedCustom:'Activity added.',interestOnly:'Matching additional custom interests is basic in this version.',tripStyle:'Travel style',selectedRegion:'Region',photoBy:'Photo by',languagePrompt:'Choose your interface language.',mapStyleLabel:'Map appearance',mapStyleColor:'Colourful',mapStyleLight:'Minimal',mapLoading:'Loading map…',mapLoadingText:'An internet connection is needed to display the map.',mapError:'Could not display the map',mapErrorText:'Check your internet connection and select Retry. Your list of places is still available.',mapRetry:'Retry'}
+ he:{startTitle:"מאיפה מתחילים את הטיול?",newFeature:"משופר ב־0.7.4",startDescription:"בחר מקום מוכר, או סמן את הבית / המלון שלך על המפה. אפשר להשאיר ריק.",startSearchLabel:"חיפוש נקודת התחלה",startPickOnMap:"⌖ בחירה על המפה",startNotChosen:"לא נבחרה נקודת התחלה — אפשר להמשיך גם ככה.",startClear:"הסר את נקודת ההתחלה",startPopular:"מקום מוכר",startPlace:"נקודת עניין",startNoMatch:"לא מצאת את המקום? לחץ על ״בחירה על המפה״ וסמן אותו ידנית.",returnTitle:"חוזרים לנקודת ההתחלה בסוף כל יום",returnHint:"מתאים למי שישנים באותו מלון או בית בכל לילה. זהו תכנון משוער, לא ניווט כבישים.",mustTitle:"יש מקומות שאתה לא רוצה לפספס?",mustDescription:"בחר מקומות שחייבים להופיע במסלול. לא נחליף אותם אוטומטית.",mustSearchLabel:"חיפוש מקום",mustEmpty:"לא נבחרו מקומות חובה. ניתן להוסיף כמה שרוצים.",mustRemove:"הסרת מקום חובה",mustNoMatch:"לא מצאנו התאמה ברשימה. אפשר לחפש מקום נוסף ברשת.",mustNoSuggestions:"בחרת את ההמלצות הנפוצות. אפשר לחפש מקום אחר.",mustOnline:"⌕ חיפוש מקומות נוספים ברשת",mustSearchMin:"הקלד לפחות שני תווים לחיפוש.",mustSearchOffline:"אין חיבור לרשת. אפשר לבחור מקומות מתוך הרשימה.",mustSearching:"מחפש מקומות ב־OpenStreetMap…",mustNoOnline:"לא נמצאו תוצאות נוספות. נסה שם אחר.",mustSearchFailed:"החיפוש ברשת אינו זמין כרגע. נסה שוב מאוחר יותר.",mustLocked:"זהו מקום חובה. כדי להחליפו או להסירו, בטל תחילה את סימון החובה.",mustRouteTag:"★ מקום חובה",mustUnpin:"ביטול מקום חובה",mustPin:"סמן כמקום חובה",googleDirections:"פתיחת ניווט ב־Google Maps",wazeDriving:"Waze מיועד לניווט ברכב. פתיחת האפליקציה תלויה במכשיר.",getDirections:"איך מגיעים?",mapSelectedDay:"היום הנבחר",mapWholeTrip:"כל הטיול",mapAllDays:"מפת כל הטיול",startPointShort:"נקודת התחלה",straightLine:"מרחק בקו אווירי (לא נסיעה):",km:"ק״מ",returnNote:"חזרה לנקודת ההתחלה",previousDayEnd:"סיום היום הקודם",originDialogTitle:"סמן את נקודת ההתחלה",originDialogIntro:"לחץ על מיקום הבית, המלון או כל נקודה אחרת במפה.",originMapHint:"לחץ על המפה כדי לסמן נקודת התחלה. המפה דורשת חיבור לאינטרנט.",originMapUnavailable:"לא ניתן לטעון את המפה. אפשר לבחור מקום מתוך הרשימה במסך התכנון.",originPointChosen:"נקודת התחלה סומנה — אפשר לתת לה שם ולשמור.",originName:"איך נקרא למקום?",originSave:"שמירת נקודת התחלה",capacityTitle:"רגע, הטיול הזה צפוף",capacitySubtitle:"חשוב לנו לא לוותר על מקומות שסימנת כחובה.",capacityEdit:"אחזור ואצמצם",capacityContinue:"הכנס את כולם למסלול",mapNote:"מפה חינמית של OpenFreeMap, עם נתונים של OpenStreetMap. הקווים הישרים מראים את סדר התחנות, לא מסלול בכבישים. לניווט אמיתי לחץ על Google Maps או Waze.",broadened:"כדי למלא את הימים, הוספנו גם מקומות מחוץ לאזור או לתחומי העניין שבחרת. המרחקים הם בקו אווירי בלבד; כדאי לבדוק זמינות, פתיחה והגעה לפני היציאה.",repeatNotice:"אין מספיק מקומות שונים במאגר לתכנון כל הימים שביקשת, ולכן חלק מההצעות עשויות לחזור. אפשר לשנות את האזור או את מספר הימים.",navHome:'ראשי',navPlan:'תכנון טיול',navSaved:'טיולים שמורים',heroEyebrow:'DISCOVER MORE · EXPERIENCE ISRAEL',heroTitle:'כל ישראל. בקצב שלך.',heroText:'מהנחלים וההרים בצפון ועד המדבר והים בדרום — בנה טיול שמתחבר למה שאתה אוהב, עם חוויות שמתאימות בדיוק לדרך שלך.',startPlanning:'בואו נתכנן טיול ←',exploreRegions:'לגלות את האזורים',regionsTitle:'לאן בא לך לנסוע?',regionsSub:'בחר אזור כדי להתחיל לגלות מה מחכה בו.',north:'הצפון הירוק',northSub:'מים, הרים, מסלולים ונופים',center:'החוף והמרכז',centerSub:'ים, עיר, תרבות ואוכל',jerusalem:'ירושלים והסביבה',jerusalemSub:'היסטוריה, סמטאות ונוף',south:'הדרום והמדבר',southSub:'מרחבים, מכתשים ושקט',whyTitle:'טיול שמרגיש שלך',whySub:'לא עוד רשימת אתרים — תכנון שמתחיל במה שמתאים לך.',feature1Title:'מתכננים לפי הקצב שלך',feature1Text:'מעדיפים יום רגוע או מלא חוויות? בוחרים את הקצב ואת סוג הפעילויות.',feature2Title:'רואים את הטיול על המפה',feature2Text:'כל יום מסודר בפני עצמו, ואפשר לפתוח מידע על כל מקום ולערוך את התוכנית.',photoCredits:'קרדיטים לתמונות:',planEyebrow:'YOUR JOURNEY STARTS HERE',planTitle:'בוא נבנה לך טיול.',planIntro:'כמה שאלות קצרות יעזרו להבין מה מתאים לך — כדי שכל יום יכלול פעילות שמתאימה לסגנון שלך.',basicsTitle:'קצת פרטים על הטיול',basicsSub:'אפשר לשנות את כל הפרטים גם בהמשך.',tripName:'שם הטיול',days:'מספר ימים',budget:'תקציב כולל (₪)',region:'אזור מועדף',allIsrael:'כל הארץ',interestsTitle:'מה מעניין אותך?',interestsSub:'אפשר לבחור כמה תחומי עניין, ולהוסיף משלך.',otherPrompt:'מה עוד תרצה לשלב בטיול? כתוב כמה דברים שתרצה.',travelStyleTitle:'איך אתה אוהב לטייל?',travelStyleSub:'הבחירה הזו משפיעה על כמות הפעילויות שנציע בכל יום.',relaxed:'רגוע',relaxedSub:'פעילות אחת ביום, עם זמן לנוח ולגלות.',balanced:'מאוזן',balancedSub:'כמה חוויות ביום, בלי להעמיס.',active:'עמוס ואקטיבי',activeSub:'כמה שיותר חוויות וניצול של היום.',transport:'איך תתנייד?',car:'רכב פרטי',public:'תחבורה ציבורית',walk:'בעיקר ברגל',mixed:'שילוב',company:'עם מי אתה מטייל?',solo:'לבד',couple:'בזוג',friends:'חברים',family:'משפחה',noEmptyDays:'נבנה לפחות פעילות אחת לכל יום. אם חסרות אפשרויות באזור או בתחום שבחרת, נציע פחות ביקורים או נבקש ממך להרחיב את האזור — לא נוסיף יעד מרוחק ללא אישור.',generate:'יצירת המסלול שלי ←',backHome:'חזרה לבית',yourRoute:'YOUR ISRAEL JOURNEY · V0.7.4',editPreferences:'עריכת העדפות',saveTrip:'שמירת הטיול',dayPlan:'התוכנית לפי ימים',dayPlanSub:'לחץ על מקום כדי להכיר אותו. רוצה משהו אחר? העוזר ישאל אותך מה מתאים.',addPlace:'הוספת מקום ליום הנבחר',add:'הוספה',mapTitle:'מפת הטיול',routeSpots:'מקומות ביום הזה',mapNote:'מפה חינמית של OpenFreeMap, עם נתונים של OpenStreetMap. הסמנים מראים את מיקום המקומות, לא מסלול נסיעה. זמני נסיעה וניווט עדיין אינם מחושבים.',savedEyebrow:'YOUR TRIPS',savedTitle:'הטיולים שלך.',savedSub:'כל הטיולים ששמרת במקום אחד. אפשר לפתוח טיול ולהמשיך לערוך אותו.',newTrip:'יצירת טיול חדש',assistantTitle:'בוא נמצא משהו שמתאים יותר.',assistantIntro:'אני אשאל כמה שאלות קצרות ואציע חלופה שמתאימה ליום שלך.',day:'יום',places:'מקומות',activities:'פעילויות',details:'לפרטים ותמונות',change:'שינוי בעזרת העוזר',moveUp:'↑ למעלה',moveDown:'↓ למטה',remove:'הסרה',viewPlace:'לפרטים',empty:'אין עדיין פעילות ביום הזה.',save:'שמירה',open:'פתיחה',delete:'מחיקה',saved:'הטיול נשמר בהצלחה.',deleted:'הטיול נמחק.',noBudget:'יש להזין תקציב תקין בשקלים.',badDays:'יש לבחור בין יום אחד ל־3650 ימים.',budgetTag:'תקציב כולל',travelPace:'קצב',relaxedTag:'רגוע',balancedTag:'מאוזן',activeTag:'אקטיבי',transportLabel:'התניידות',carTag:'רכב',publicTag:'תחבורה ציבורית',walkTag:'ברגל',mixedTag:'שילוב',companions:'הרכב',customInterest:'תחומי עניין נוספים',daysCount:'ימים',activitiesCount:'נקודות עניין',broadened:'אין מספיק מקומות זמינים באזור המבוקש. לא נוסיף יעדים מרוחקים ללא אישורך; אפשר לנסות שוב כשהחיפוש המקוון זמין.',repeatNotice:'אין מספיק מקומות שונים במידע הזמין למלא את כל ימי הטיול. אפשר לחפש מקומות חדשים, להוסיף נקודות ידנית או להשאיר ימים פנויים.',needReplace:'כדי שלא יישאר יום ריק, הוסף פעילות חלופית לפני הסרת האחרונה.',choosePlace:'בחר מקום להוספה',noMorePlaces:'אין עוד מקומות זמינים במאגר להוספה.',added:'המקום נוסף ליום.',replacementTitle:'מה היית מעדיף במקום הזה?',replacementType:'איזה סוג חוויה מתאים לך יותר?',easy:'קליל',moderate:'בינוני',hard:'אתגרי',effort:'כמה מאמץ מתאים לך?',extraQuestion:'יש עוד משהו שכדאי לדעת?',extraPlaceholder:'למשל: לא רחוק מהמסלול, מתאים לילדים, בלי הרבה הליכה...',any:'אין העדפה',natureOpt:'טבע ונוף',historyOpt:'היסטוריה',foodOpt:'אוכל',cultureOpt:'תרבות',waterOpt:'מים וים',adventureOpt:'הרפתקה',submitReplacement:'מצא לי חלופה',cancel:'ביטול',replacementDone:'מצאתי חלופה והחלפתי את המקום במסלול.',noReplacement:'לא מצאתי חלופה מדויקת במאגר הדוגמה. אפשר לשנות את ההעדפות או להוסיף מקום אחר.',extra:'מידע נוסף',regionPhotoNote:'תמונות להשראה מהאזור',photoCredit:'מקור התמונה',imageUnavailable:'לא ניתן לטעון את התמונה כרגע.',moreInfo:'מה מיוחד במקום?',timeNote:'מידע כללי בלבד — יש לבדוק שעות פתיחה, תנאי כניסה והנחיות לפני ביקור.',planSaved:'הטיול נשמר במכשיר ובדפדפן הזה בלבד.',otherIn:'אחר',routeTitle:'המסלול שלי',dateSaved:'נשמר',selectLanguage:'בחירת שפה',langChanged:'שפת הממשק עודכנה.',noSaved:'עדיין לא שמרת טיולים. אחרי יצירת מסלול, לחץ על „שמירת הטיול”.',addedCustom:'הפעילות נוספה.',interestOnly:'ההתאמה לתחומי עניין נוספים היא בסיסית בגרסה זו.',tripStyle:'סגנון הטיול',selectedRegion:'אזור',photoBy:'צילום',languagePrompt:'בחר את שפת הממשק.',mapStyleLabel:'מראה המפה',mapStyleColor:'צבעונית',mapStyleLight:'נקייה',mapLoading:'טוענים את המפה…',mapLoadingText:'המפה דורשת חיבור לאינטרנט.',mapError:'לא הצלחנו להציג את המפה',mapErrorText:'בדוק שיש חיבור לאינטרנט ולחץ על ״נסה שוב״. רשימת המקומות במסלול עדיין זמינה.',mapRetry:'נסה שוב'},
+ en:{startTitle:"Where will your trip begin?",newFeature:"Improved in 0.7.4",startDescription:"Choose a familiar place or mark your home / hotel on the map. You may also leave this blank.",startSearchLabel:"Search for a starting point",startPickOnMap:"⌖ Pick on map",startNotChosen:"No starting point selected — you can still continue.",startClear:"Remove starting point",startPopular:"Popular location",startPlace:"Place",startNoMatch:"Not listed? Select “Pick on map” to mark any location.",returnTitle:"Return to the starting point every evening",returnHint:"Useful when staying in the same hotel or home each night. This is approximate planning, not road navigation.",mustTitle:"Places you absolutely want to visit?",mustDescription:"Choose must-see places. We will not automatically replace them.",mustSearchLabel:"Find a place",mustEmpty:"No must-see places yet. Add as many as you like.",mustRemove:"Remove must-see place",mustNoMatch:"Not found in the list. Try an online search.",mustNoSuggestions:"You have chosen the suggested places. Search for another location.",mustOnline:"⌕ Search for more places online",mustSearchMin:"Enter at least two characters.",mustSearchOffline:"No network connection. You can still choose listed places.",mustSearching:"Searching OpenStreetMap…",mustNoOnline:"No additional places found. Try another name.",mustSearchFailed:"Online search is unavailable right now. Try again later.",mustLocked:"This is a must-see place. Unmark it before removing or replacing it.",mustRouteTag:"★ Must-see",mustUnpin:"Unmark must-see",mustPin:"Mark as must-see",googleDirections:"Open directions in Google Maps",wazeDriving:"Waze is for driving. Opening the app depends on your device.",getDirections:"Get directions",mapSelectedDay:"Selected day",mapWholeTrip:"Entire trip",mapAllDays:"Full itinerary map",startPointShort:"Starting point",straightLine:"Straight-line distance (not driving):",km:"km",returnNote:"Return to starting point",previousDayEnd:"Previous day’s end",originDialogTitle:"Choose your starting point",originDialogIntro:"Click your hotel, home or any other location on the map.",originMapHint:"Click the map to place your starting point. Internet connection is required.",originMapUnavailable:"The map could not be loaded. Choose a listed place instead.",originPointChosen:"Starting point marked — name and save it.",originName:"Give this place a name",originSave:"Save starting point",capacityTitle:"This itinerary looks quite full",capacitySubtitle:"We will not silently skip any of your must-see places.",capacityEdit:"Go back and reduce",capacityContinue:"Include every must-see place",mapNote:"Free map by OpenFreeMap using OpenStreetMap data. Straight lines show stop order, not roads. For actual navigation choose Google Maps or Waze.",broadened:"To fill the days, we added places beyond your region or chosen interests. Distances are straight-line estimates only; check access, hours and availability before travelling.",repeatNotice:"There are not enough unique places in this demo catalogue for every day, so some suggestions may repeat. Adjust the region or days.",navHome:'Home',navPlan:'Plan a trip',navSaved:'Saved trips',heroEyebrow:'DISCOVER MORE · EXPERIENCE ISRAEL',heroTitle:'All of Israel. Your pace.',heroText:'From northern streams and mountains to the southern desert and sea — build a trip around what you love, with experiences that fit your style.',startPlanning:'Start planning →',exploreRegions:'Explore regions',regionsTitle:'Where would you like to go?',regionsSub:'Choose a region and start exploring what it has to offer.',north:'The green north',northSub:'Water, mountains, trails and views',center:'Coast & central Israel',centerSub:'Sea, city, culture and food',jerusalem:'Jerusalem & surroundings',jerusalemSub:'History, lanes and views',south:'The south & desert',southSub:'Open spaces, craters and quiet',whyTitle:'A trip that feels like yours',whySub:'More than a list of places — planning that starts with what suits you.',feature1Title:'Plan at your own pace',feature1Text:'Prefer a relaxed day or a full schedule? Choose your pace and the kinds of activities you enjoy.',feature2Title:'See your trip on the map',feature2Text:'Each day is organized separately. Open a place to learn more and edit your plan.',photoCredits:'Photo credits:',planEyebrow:'YOUR JOURNEY STARTS HERE',planTitle:'Let’s build your trip.',planIntro:'A few quick questions help us understand what suits you — so every day includes an activity that matches your style.',basicsTitle:'A few trip details',basicsSub:'You can update these details later.',tripName:'Trip name',days:'Number of days',budget:'Total budget (₪)',region:'Preferred region',allIsrael:'All Israel',interestsTitle:'What are you interested in?',interestsSub:'Choose more than one interest and add your own.',otherPrompt:'What else would you like to include? Add as many things as you like.',travelStyleTitle:'How do you like to travel?',travelStyleSub:'Your choice affects how many activities we suggest each day.',relaxed:'Relaxed',relaxedSub:'One activity each day, with time to rest and explore.',balanced:'Balanced',balancedSub:'A few experiences each day without overloading it.',active:'Full & active',activeSub:'As many experiences as possible throughout the day.',transport:'How will you get around?',car:'Private car',public:'Public transport',walk:'Mostly walking',mixed:'A mix',company:'Who are you travelling with?',solo:'Solo',couple:'As a couple',friends:'Friends',family:'Family',noEmptyDays:'We recommend genuine nearby places without inventing destinations. For long trips, some days may be left free if sources have too few places.',generate:'Create my itinerary →',backHome:'Back home',yourRoute:'YOUR ISRAEL JOURNEY · V0.7.4',editPreferences:'Edit preferences',saveTrip:'Save trip',dayPlan:'Your days',dayPlanSub:'Select a place to learn more. Want something different? The assistant will ask what suits you.',addPlace:'Add a place to this day',add:'Add',mapTitle:'Trip map',routeSpots:'Places for this day',mapNote:'Free OpenFreeMap map using OpenStreetMap data. Pins show place locations, not a driving route. Travel times and navigation are not yet calculated.',savedEyebrow:'YOUR TRIPS',savedTitle:'Your trips.',savedSub:'All your saved trips in one place. Open a trip to keep editing it.',newTrip:'Create a new trip',assistantTitle:'Let’s find a better fit.',assistantIntro:'I’ll ask a few short questions and suggest an alternative that suits your day.',day:'Day',places:'places',activities:'activities',details:'Details & photos',change:'Find an alternative',moveUp:'↑ Up',moveDown:'↓ Down',remove:'Remove',viewPlace:'Details',empty:'No activity has been added to this day yet.',save:'Save',open:'Open',delete:'Delete',saved:'Trip saved successfully.',deleted:'Trip deleted.',noBudget:'Enter a valid budget in shekels.',badDays:'Choose between 1 and 3650 days.',budgetTag:'Total budget',travelPace:'Pace',relaxedTag:'Relaxed',balancedTag:'Balanced',activeTag:'Active',transportLabel:'Transport',carTag:'Car',publicTag:'Public transport',walkTag:'Walking',mixedTag:'Mixed',companions:'Travelling with',customInterest:'Additional interests',daysCount:'days',activitiesCount:'attractions',broadened:'Not enough places were available for the requested region. We will not add faraway stops without your permission; try again when live place search is available.',repeatNotice:'The available place data is not enough to fill every day. Find more places online, add your own, or leave some days free.',needReplace:'To keep this day from becoming empty, add a replacement before removing its last activity.',choosePlace:'Choose a place to add',noMorePlaces:'No more places are available in this demo catalogue.',added:'Place added to the day.',replacementTitle:'What would you prefer instead?',replacementType:'What kind of experience would suit you better?',easy:'Easy',moderate:'Moderate',hard:'Challenging',effort:'How much effort would you like?',extraQuestion:'Anything else we should know?',extraPlaceholder:'For example: closer to the route, child-friendly, not too much walking...',any:'No preference',natureOpt:'Nature & views',historyOpt:'History',foodOpt:'Food',cultureOpt:'Culture',waterOpt:'Water & sea',adventureOpt:'Adventure',submitReplacement:'Find an alternative',cancel:'Cancel',replacementDone:'Found an alternative and updated your itinerary.',noReplacement:'Could not find a precise match in the demo catalogue. Try adjusting your preferences or add another place.',extra:'More information',regionPhotoNote:'Images for inspiration from this region',photoCredit:'Photo source',imageUnavailable:'The image could not be loaded right now.',moreInfo:'What makes this place special?',timeNote:'General information only — check opening hours, entry conditions and visitor guidance before going.',planSaved:'This trip is saved only in this browser on this device.',otherIn:'Other',routeTitle:'My itinerary',dateSaved:'Saved',selectLanguage:'Choose language',langChanged:'Interface language updated.',noSaved:'You have no saved trips yet. After creating an itinerary, select “Save trip”.',addedCustom:'Activity added.',interestOnly:'Matching additional custom interests is basic in this version.',tripStyle:'Travel style',selectedRegion:'Region',photoBy:'Photo by',languagePrompt:'Choose your interface language.',mapStyleLabel:'Map appearance',mapStyleColor:'Colourful',mapStyleLight:'Minimal',mapLoading:'Loading map…',mapLoadingText:'An internet connection is needed to display the map.',mapError:'Could not display the map',mapErrorText:'Check your internet connection and select Retry. Your list of places is still available.',mapRetry:'Retry'}
 };
 
 const V07={
@@ -335,7 +353,7 @@ let mapReady=false,mapTimer=null,mapStatusKind='loading',lastMapIds=[];
 const mapStyles={liberty:'https://tiles.openfreemap.org/styles/liberty',positron:'https://tiles.openfreemap.org/styles/positron'};
 let mapStyle=localStorage.getItem('discoverIsraelMapStyle')||'liberty';if(!mapStyles[mapStyle])mapStyle='liberty';$('map-style').value=mapStyle;
 try{saved=JSON.parse(localStorage.getItem('discoverIsraelTrips_v072')||localStorage.getItem('discoverIsraelTrips_v071')||localStorage.getItem('discoverIsraelTrips_v07')||localStorage.getItem('discoverIsraelTrips_v06')||localStorage.getItem('discoverIsraelTrips_v05')||localStorage.getItem('discoverIsraelTrips_v04')||localStorage.getItem('discoverIsraelTrips_v03')||localStorage.getItem('discoverIsraelTrips_v02')||'[]');if(!Array.isArray(saved))saved=[]}catch(e){saved=[]}
-const tr=k=>(T[lang]||T.he)[k]||T.he[k]||k;
+const tr=k=>(T[lang]||T.en)[k]||T.en[k]||k;
 const places=[
 {id:'banias',name:'שמורת הבניאס',en:'Banias Nature Reserve',region:'north',category:'nature',lat:33.2470,lng:35.6930,effort:'moderate',desc:'שמורת הבניאס משלבת פלגי מים זורמים, צמחייה צפופה ומסלולי הליכה למרגלות החרמון. אפשר לבחור מסלול קצר יחסית או ביקור ארוך יותר בהתאם למסלול הפתוח ולתנאי השטח.',enDesc:'Banias combines flowing streams, dense vegetation and walking paths at the foot of Mount Hermon. Choose a shorter or longer visit depending on open trails and conditions.',photos:['banias','bahai'],highlights:['מפל הבניאס','נחל וצמחייה','מסלולי הליכה'],enHighlights:['Banias waterfall','Stream and greenery','Walking trails']},
 {id:'bahai',name:'הגנים הבהאיים, חיפה',en:'Bahá’í Gardens, Haifa',region:'north',category:'culture',lat:32.8140,lng:34.9880,effort:'easy',desc:'גנים מדורגים ומטופחים היורדים במורד הכרמל, עם תצפית רחבה אל חיפה והמפרץ. חלק מהביקורים והסיורים כפופים לכללי האתר ולשעות שונות לפי נקודת הכניסה.',enDesc:'Carefully landscaped terraces descend Mount Carmel, with wide views over Haifa and the bay. Visits and tours follow site rules and different schedules by entrance.',photos:['bahai','acre'],highlights:['גנים מדורגים','תצפית למפרץ','אדריכלות ונוף'],enHighlights:['Terraced gardens','Bay views','Architecture and scenery']},
@@ -376,16 +394,18 @@ const photos={
 };
 const regionNames={north:{he:'צפון',en:'North'},center:{he:'מרכז והחוף',en:'Center & coast'},jerusalem:{he:'ירושלים והסביבה',en:'Jerusalem area'},south:{he:'דרום',en:'South'},all:{he:'כל הארץ',en:'All Israel'}};
 const categoryNames={nature:{he:'טבע ונופים',en:'Nature & views'},history:{he:'היסטוריה',en:'History'},food:{he:'אוכל',en:'Food'},culture:{he:'תרבות ואמנות',en:'Culture & art'},water:{he:'ים ומים',en:'Sea & water'},adventure:{he:'הרפתקאות',en:'Adventure'},lodging:{he:'מקום לינה',en:'Accommodation'},hike:{he:'מסלול הליכה',en:'Hiking trail'},place:{he:'מקום אישי',en:'Personal place'}};
-function placeName(p){return lang==='en'?p.en:p.name}function placeDesc(p){return lang==='en'?p.enDesc:p.desc}function categoryName(c){if(c==='city')return tr('placeTypeCity');if(c==='address')return tr('placeTypeAddress');return (categoryNames[c]||{he:c||'מקום',en:c||'Place'})[lang]}
+function placeName(p){return lang==='he'?(p.name||p.en||''):(p.en||p.name||'')}function placeDesc(p){if(lang==='he')return p.desc||p.enDesc||'';const s=p.enDesc||p.desc||'';return /[֐-׿]/.test(s)?'Open the place details for location and source information.':s}function categoryName(c){if(c==='city')return tr('placeTypeCity');if(c==='address')return tr('placeTypeAddress');const v=categoryNames[c]||{he:c||'מקום',en:c||'Place'};return v[lang]||v.en}
 function toast(msg){const el=$('toast');el.textContent=msg;el.classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove('show'),2500)}
-function saveLocal(){try{localStorage.setItem('discoverIsraelTrips_v072',JSON.stringify(saved))}catch(e){toast(lang==='en'?'Unable to save in this browser.':'לא ניתן לשמור בדפדפן הזה.')}}
-function applyLanguage(){document.documentElement.lang=lang;document.documentElement.dir=lang==='he'?'rtl':'ltr';document.querySelectorAll('[data-i18n]').forEach(el=>{const key=el.dataset.i18n;if(tr(key))el.textContent=tr(key)});document.querySelectorAll('[data-he][data-en]').forEach(el=>{el.textContent=lang==='he'?el.dataset.he:el.dataset.en});document.querySelectorAll('[data-placeholder-he]').forEach(el=>el.placeholder=lang==='he'?el.dataset.placeholderHe:el.dataset.placeholderEn);$('lang-switch').textContent=lang==='he'?'עברית · EN':'EN · עברית';
+function saveLocal(){try{localStorage.setItem('discoverIsraelTrips_v072',JSON.stringify(saved))}catch(e){toast(lang!=='he'?'Unable to save in this browser.':'לא ניתן לשמור בדפדפן הזה.')}}
+function applyLanguage(){document.documentElement.lang=lang;document.documentElement.dir=['he','ar'].includes(lang)?'rtl':'ltr';document.querySelectorAll('[data-i18n]').forEach(el=>{const key=el.dataset.i18n;if(tr(key))el.textContent=tr(key)});document.querySelectorAll('[data-he][data-en]').forEach(el=>{el.textContent=localizedStatic(el.dataset.he,el.dataset.en)});document.querySelectorAll('[data-placeholder-he]').forEach(el=>el.placeholder=localizedStatic(el.dataset.placeholderHe,el.dataset.placeholderEn));$('lang-switch').textContent='🌐 '+(LANG_INFO.find(x=>x.code===lang)?.native||'Language');
  ['start-search-online','day-search-online'].forEach(id=>{const b=$(id);if(b)b.textContent='⌕ '+tr('searchAll')});
+ localizeExtraUI();
+ const nameInput=$('trip-name');if(!editingTripId&&['הטיול שלי בישראל','My Israel trip'].includes(nameInput.value))nameInput.value=lang==='he'?'הטיול שלי בישראל':'My Israel trip';
  const retry=$('origin-map-retry');if(retry)retry.textContent='↻ '+tr('mapRetry');
  const mustBtn=$('must-online');if(mustBtn)mustBtn.textContent='⌕ '+tr('searchAll');
- const pinBtn=$('day-pick-map');if(pinBtn)pinBtn.textContent=lang==='en'?'⌖ Pin a place on the map':'⌖ סמן מקום על המפה';$('other-wrap').classList.toggle('hidden',!$('other-chip').classList.contains('selected'));setMapStatus(mapStatusKind);if(trip&&!$('route-view').classList.contains('hidden'))renderTrip();if(!$('saved-view').classList.contains('hidden'))renderSaved();renderMustSelected();renderMustResults();renderOriginInfo();if(!selectedOrigin||document.activeElement?.id==='start-search')renderOriginResults()}
-function showLanguageGate(){const gate=$('language-gate');gate.classList.remove('hidden');gate.querySelector('h1').textContent='Welcome / ברוכים הבאים';gate.querySelector('p').textContent=lang?tr('languagePrompt'):'בחר את שפת הממשק. אפשר לשנות אותה גם בהמשך מתוך האתר.'}
-function chooseLanguage(l){lang=l;localStorage.setItem('discoverIsraelLang',l);$('language-gate').classList.add('hidden');applyLanguage();if(!localStorage.getItem(PROFILE_KEY))startOnboard();}
+ const pinBtn=$('day-pick-map');if(pinBtn)pinBtn.textContent=lang!=='he'?'⌖ Pin a place on the map':'⌖ סמן מקום על המפה';$('other-wrap').classList.toggle('hidden',!$('other-chip').classList.contains('selected'));setMapStatus(mapStatusKind);if(trip&&!$('route-view').classList.contains('hidden'))renderTrip();if(!$('saved-view').classList.contains('hidden'))renderSaved();renderMustSelected();renderMustResults();renderOriginInfo();if(!selectedOrigin||document.activeElement?.id==='start-search')renderOriginResults()}
+function showLanguageGate(){const gate=$('language-gate');gate.classList.remove('hidden');gate.querySelector('h1').textContent=lang==='he'?'בחר את השפה שלך':'Choose your language';gate.querySelector('p').textContent=lang==='he'?'תוכל לשנות את השפה גם בהמשך.':'You can change the language at any time.'}
+function chooseLanguage(l){if(!LANG_INFO.some(x=>x.code===l))return;lang=l;localStorage.setItem('discoverIsraelLang',l);$('language-gate').classList.add('hidden');applyLanguage();if(!localStorage.getItem(PROFILE_KEY))startOnboard();}
 document.querySelectorAll('[data-set-lang]').forEach(b=>b.addEventListener('click',()=>chooseLanguage(b.dataset.setLang)));
 $('lang-switch').addEventListener('click',()=>{showLanguageGate()});
 function showView(v){['home','create','route','saved','explore'].forEach(x=>$(x+'-view').classList.toggle('hidden',x!==v));document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===v));const target=$(v+'-view');if(target){target.classList.remove('animate-in');void target.offsetWidth;target.classList.add('animate-in')}if(v==='route')setTimeout(()=>{if(map)map.resize();renderMap(lastMapIds)},100);if(v==='saved')renderSaved();if(v==='explore')setTimeout(initExploreMap,80);window.scrollTo({top:0,behavior:'smooth'})}
@@ -402,7 +422,7 @@ async function createTrip(allowCrowded=false){
  if(generateBusy)return;
  const days=Number($('days').value),budget=$('budget').value.trim()===''?0:Number($('budget').value);
  const adults=Number($('party-adults').value),kids=Number($('party-kids').value);
- if(!Number.isInteger(days)||days<1||days>30){toast(tr('badDays'));return}
+ if(!Number.isInteger(days)||days<1||days>3650){toast(tr('badDays'));return}
  if(!Number.isFinite(budget)||budget<0){toast(tr('noBudget'));return}
  if(!Number.isInteger(adults)||!Number.isInteger(kids)||adults<0||kids<0||adults+kids<1||adults+kids>100){toast(langMsg('בחר בין משתתף אחד ל־100.','Choose between 1 and 100 participants.'));return}
  const dateFrom=$('date-from').value,dateTo=$('date-to').value;
@@ -412,12 +432,12 @@ async function createTrip(allowCrowded=false){
  const region=collectRegion(),interests=collectInterests(),other=$('other-chip').classList.contains('selected')?$('other-interest').value.trim():'';
  const lodging=collectLodging(),anchor=plannerAnchor(region),radius=plannerRadius(region,days),foodPref=$('food-pref').value,experience=$('experience-mode').value;
  const notices=[];
- generateBusy=true;const button=$('generate');button.disabled=true;const prevText=button.textContent;button.textContent=langMsg('⌛ מחפש מקומות ומתכנן ימים...','⌛ Discovering places and planning days...');
+ generateBusy=true;const button=$('generate');button.disabled=true;const prevText=button.textContent;button.textContent=langMsg('⌛ מחפש מקומות ומתכנן ימים...','⌛ Discovering places and planning days...');showBusy(langMsg('מחפש מקומות ומתכנן טיול…','Discovering places and planning your trip…'),langMsg('נבדוק מקומות באזור הנבחר, ואז נבנה מסלול יומי.','Finding locations in the chosen area before organizing each day.'));
  try{
   let fresh=[];
   try{fresh=await fetchPOIs(anchor,radius);if(!fresh.length)notices.push(langMsg('לא נמצאו תוצאות חדשות במקור המפות. ההמלצות נבנות מהמקומות שכבר זמינים באפליקציה.','Live place discovery returned no results; using known locations.'))}
   catch(e){notices.push(langMsg('מאגר המקומות החי אינו זמין כרגע; השתמשנו במקומות הידועים. נסה ליצור טיול שוב כשהרשת זמינה.','Live places are temporarily unavailable; using cached and built-in places.'))}
-  for(const p of fresh)registerPlace(p);
+  updateBusy(langMsg('מסדר את המסלול לפי ימים…','Organizing your itinerary by day…'),langMsg('בודק מרחקים, העדפות ומקומות חובה.','Considering distances, preferences and must-see stops.'));for(const p of fresh)registerPlace(p);
   const required=mustVisitIds.map(getPlace).filter(p=>p&&Number.isFinite(p.lat)&&Number.isFinite(p.lng));
   const outside=required.filter(p=>!isInsideRegion(p,region));
   if(outside.length&&region!=='all')notices.push(langMsg(`${outside.length} מקומות שסימנת כחובה נמצאים מחוץ לאזור שנבחר; השארנו אותם רק כי בחרת בהם במפורש.`,`${outside.length} explicitly selected must-see places are outside your chosen region.`));
@@ -430,12 +450,24 @@ async function createTrip(allowCrowded=false){
   const selected=[...required],seen=new Set(selected.map(p=>p.id));
   const target=Math.max(days*dailyTarget(),required.length);
   const maxVisits=Math.min(target,possible.length+required.length);
+  if(maxVisits>80){
+   const categoryCounts={};const pool=possible.filter(p=>!seen.has(p.id));
+   const ranked=pool.map(p=>({p,s:scorePoi(p,{anchor,selected:[],interests,experience,mode:foodPref,usedHistory:knownPast,radius})})).sort((a,b)=>b.s-a.s);
+   while(selected.length<maxVisits&&ranked.length){
+    let bestIndex=0,bestScore=-Infinity;for(let i=0;i<ranked.length;i++){
+      const item=ranked[i],diversity=(categoryCounts[item.p.category]||0)*1.5;
+      const score=item.s-diversity;if(score>bestScore){bestScore=score;bestIndex=i}
+    }
+    const next=ranked.splice(bestIndex,1)[0].p;selected.push(next);seen.add(next.id);categoryCounts[next.category]=(categoryCounts[next.category]||0)+1;
+   }
+  }else{
   while(selected.length<maxVisits){
    const remaining=possible.filter(p=>!seen.has(p.id));if(!remaining.length)break;
    const ctx={anchor,selected,interests,experience,mode:foodPref,usedHistory:knownPast,radius};
    // Geographic closeness matters more than minor differences in score.
    const best=remaining.map(p=>({p,s:scorePoi(p,ctx)})).sort((a,b)=>b.s-a.s)[0]?.p;
    if(!best)break;seen.add(best.id);selected.push(best);
+  }
   }
   if(selected.length<target)notices.push(langMsg(`נמצאו רק ${selected.length} מקומות מתאימים באזור ובמרחק סביר. השארנו יום קל יותר במקום לחזור על מקומות או להרחיק לאזור אחר.`,`Only ${selected.length} suitable places were found nearby; we did not repeat or add distant places.`));
   if(!selected.length){toast(langMsg('לא נמצאו מקומות למסלול. נסה לבחור אזור אחר או להוסיף מקומות חובה.','No suitable places. Try another area or add must-see places.'));return}
@@ -447,8 +479,8 @@ async function createTrip(allowCrowded=false){
   const itinerary=groups.map((ids,i)=>({day:i+1,places:ids}));
   if(foodPref==='include')planFoodStops(itinerary,food,foodPref);
   const prior=editingTripId&&trip?.id===editingTripId?trip:null;
-  trip={id:prior?.id||'trip-'+Date.now(),version:'0.7.3',name:$('trip-name').value.trim()||(lang==='en'?'My Israel trip':'הטיול שלי בישראל'),
-   days,budget,region,interests,other,pace,transport:$('transport').value,company:kids>0&&$('trip-company').value==='solo'?'family':adults+kids>1&&$('trip-company').value==='solo'?'friends':$('trip-company').value,
+  trip={id:prior?.id||'trip-'+Date.now(),version:'0.7.4',name:$('trip-name').value.trim()||(lang!=='he'?'My Israel trip':'הטיול שלי בישראל'),
+   days,budget,region,interests,other,pace,transport:$('transport').value,company:resolveGroupType(adults,kids),
    party:{adults,kids,total:adults+kids},startDate:dateFrom||null,endDate:dateTo||null,experience,foodPref,lodging,
    stayReturn:lodging.routine==='fixed'&&!!lodging.point,
    startPoint:haveValidOrigin(selectedOrigin)?{...selectedOrigin}:null,returnToStart:!!selectedOrigin&&returnToStart,
@@ -457,7 +489,7 @@ async function createTrip(allowCrowded=false){
    planNotice:notices.join(' '),discoverySource:fresh.length?'OpenStreetMap / Overpass':'Built-in and saved places'};
   pendingLivePlaceId=null;editingTripId=trip.id;mapScope='day';dayIndex=0;
   renderTrip();showView('route');
- }finally{generateBusy=false;button.disabled=false;button.textContent=prevText}
+ }finally{hideBusy();generateBusy=false;button.disabled=false;button.textContent=prevText}
 }
 
 $('generate').addEventListener('click',()=>createTrip(false));
@@ -494,13 +526,13 @@ const originPresets=[
  {id:'city-arad',name:'ערד',en:'Arad',lat:31.2589,lng:35.2133},
  {id:'city-deadsea',name:'עין בוקק',en:'Ein Bokek',lat:31.1995,lng:35.3620}
 ];
-const langMsg=(he,en)=>lang==='en'?en:he;
+const langMsg=(he,en)=>lang==='he'?he:en;
 function kmBetween(a,b){
  if(!a||!b||![a.lat,a.lng,b.lat,b.lng].every(Number.isFinite))return 1e6;
  const rad=Math.PI/180,delta=(b.lng-a.lng)*rad,phi1=a.lat*rad,phi2=b.lat*rad,dphi=phi2-phi1;
  return 6371*2*Math.asin(Math.min(1,Math.sqrt(Math.sin(dphi/2)**2+Math.cos(phi1)*Math.cos(phi2)*Math.sin(delta/2)**2)));
 }
-function originLabel(o){return o?((lang==='en'&&o.en)||o.name||langMsg('נקודת התחלה','Starting point')):''}
+function originLabel(o){return o?((lang!=='he'&&o.en)||o.name||langMsg('נקודת התחלה','Starting point')):''}
 function originCandidates(){
  const byId=new Set(originPresets.map(p=>p.id));
  return [...originPresets,...[...places,...livePlaces].filter(p=>!byId.has(p.id)).map(p=>({id:p.id,name:p.name,en:p.en,lat:p.lat,lng:p.lng}))];
@@ -726,6 +758,7 @@ function applyOriginFromMap(){
 function groupRouteByDays(orderedIds,days,paceCount,base,returnToBase){
  const pts=orderedIds.map(getPlace).filter(Boolean),n=pts.length;
  if(!n)return Array.from({length:days},()=>[]);
+ if(days>30||n>160||n<days)return Array.from({length:days},(_,i)=>orderedIds.slice(Math.floor(i*n/days),Math.floor((i+1)*n/days))); 
  const target=n/days,maxLen=Math.max(Math.ceil(target),paceCount+1,Math.ceil(n/days));
  const dp=Array.from({length:days+1},()=>Array(n+1).fill(Infinity));
  const prev=Array.from({length:days+1},()=>Array(n+1).fill(-1));
@@ -763,14 +796,20 @@ function renderTrip(){
  dayIndex=Math.min(dayIndex,trip.itinerary.length-1);
  $('trip-title').textContent=trip.name;
  const paceLabel=tr(trip.pace==='relaxed'?'relaxedTag':trip.pace==='active'?'activeTag':'balancedTag');
- const r=(regionNames[trip.region]||regionNames.all)[lang];
+ const r=(regionNames[trip.region]||regionNames.all)[lang]||(regionNames[trip.region]||regionNames.all).en;
  const transport=tr(({car:'carTag',public:'publicTag',walk:'walkTag',mixed:'mixedTag'})[trip.transport]||'mixedTag');
  $('trip-summary').textContent=`${trip.days} ${tr('daysCount')} · ${r} · ${paceLabel} · ${transport}${trip.other?' · '+trip.other:''}${trip.startDate?' · '+trip.startDate+' — '+(trip.endDate||''):''}`;
  $('stats').innerHTML=`<span class="stat">◷ ${trip.days} ${tr('daysCount')}</span>${trip.party?.total?`<span class="stat">👥 ${trip.party.total} ${langMsg('משתתפים','travelers')}</span>`:''}<span class="stat">₪ ${Number(trip.budget).toLocaleString(lang==='he'?'he-IL':'en-US')} ${tr('budgetTag')}</span><span class="stat">◎ ${trip.itinerary.reduce((n,d)=>n+d.places.length,0)} ${tr('activitiesCount')}</span>`;
  $('plan-notice').classList.toggle('hidden',!trip.broadened&&!trip.repeated&&!trip.planNotice);
  $('plan-notice').textContent=[trip.planNotice||'',trip.broadened?tr('broadened'):'',trip.repeated?tr('repeatNotice'):''].filter(Boolean).join(' ');
- $('daytabs').innerHTML=trip.itinerary.map((d,i)=>`<button class="daytab ${i===dayIndex?'active':''}" data-day="${i}">${tr('day')} ${i+1} · ${d.places.length}</button>`).join('');
- $('daytabs').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{dayIndex=Number(b.dataset.day);mapScope='day';renderTrip()}));
+ if(trip.days>32){
+  const first=Math.max(0,dayIndex-5),last=Math.min(trip.itinerary.length,first+11);
+  $('daytabs').innerHTML=`<button class="daytab" data-day="${Math.max(0,dayIndex-1)}">‹</button><label class="day-select-wrap"><span>${tr('day')}</span><select id="day-select" aria-label="Choose day">${trip.itinerary.map((d,i)=>`<option value="${i}" ${i===dayIndex?'selected':''}>${tr('day')} ${i+1} · ${d.places.length}</option>`).join('')}</select></label>${trip.itinerary.slice(first,last).map((d,i)=>`<button class="daytab ${i+first===dayIndex?'active':''}" data-day="${i+first}">${tr('day')} ${i+first+1}</button>`).join('')}<button class="daytab" data-day="${Math.min(trip.itinerary.length-1,dayIndex+1)}">›</button>`;
+  $('day-select').addEventListener('change',e=>{dayIndex=Number(e.target.value);mapScope='day';renderTrip()});
+ }else{
+  $('daytabs').innerHTML=trip.itinerary.map((d,i)=>`<button class="daytab ${i===dayIndex?'active':''}" data-day="${i}">${tr('day')} ${i+1} · ${d.places.length}</button>`).join('');
+ }
+ $('daytabs').querySelectorAll('button[data-day]').forEach(b=>b.addEventListener('click',()=>{dayIndex=Number(b.dataset.day);mapScope='day';renderTrip()}));
  const day=trip.itinerary[dayIndex];
  $('day-content').innerHTML=day.places.length?day.places.map((id,i)=>{
   const p=getPlace(id);if(!p)return'';
@@ -875,14 +914,34 @@ function renderMap(ids){
      points.push(p);
      const button=document.createElement('button');button.type='button';
      button.className='map-pin'+(mapScope==='all'?' map-pin--all':'');
-     button.style.background=color;button.textContent=mapScope==='all'?`${d+1}.${i+1}`:String(i+1);
+     button.style.background=color;button.textContent=mapScope==='all'?`${d+1}.${i+1}`:String(i+1);button.dataset.kind=p.category==='food'?'food':p.category==='lodging'?'lodging':'visit';
      button.title=`${tr('day')} ${d+1} · ${placeName(p)}`;
      button.setAttribute('aria-label',button.title);
      button.addEventListener('click',event=>{event.stopPropagation();openPlace(p.id)});
      markers.push(new maplibregl.Marker({element:button,anchor:'bottom'}).setLngLat([p.lng,p.lat]).addTo(map));
    });
  }
- if(mapReady){drawTripLines();focusMap(points);refreshRoads()}
+  // A chosen stay is shown on the map even though it is not a numbered attraction.
+  const stay=trip.lodging?.point;if(stay&&Number.isFinite(stay.lat)&&Number.isFinite(stay.lng)){
+    const marker=document.createElement('button');marker.type='button';marker.className='map-service-pin stay-marker';marker.textContent='🛏';marker.title=localizedStatic('מקום לינה','Accommodation')+': '+(lang==='he'?stay.name:(stay.en||stay.name));
+    marker.addEventListener('click',e=>{e.stopPropagation();openPlace(stay.id)});
+    markers.push(new maplibregl.Marker({element:marker,anchor:'bottom'}).setLngLat([stay.lng,stay.lat]).addTo(map));points.push(stay);
+  }
+  if(mapScope==='day'&&trip.lodging?.type&&trip.lodging.type!=='none'&&!trip.lodging.point){
+    const pts=(trip.itinerary[dayIndex]?.places||[]).map(getPlace).filter(Boolean);
+    const anchor=pts[0]||trip.startPoint;
+    if(anchor){const lodgingOptions=[...livePlaces,...places].filter(p=>isLodgingCategory(p)&&stayTypeMatches(p,trip.lodging.type)&&nearDistance(p,anchor)<25).sort((a,b)=>nearDistance(a,anchor)-nearDistance(b,anchor)).slice(0,3);
+      for(const p of lodgingOptions){const el=document.createElement('button');el.type='button';el.className='map-service-pin stay-marker';el.textContent='🛏';el.title=placeName(p)+' · '+localizedStatic('בחר לינה','Choose accommodation');el.addEventListener('click',e=>{e.stopPropagation();if(!trip?.lodging)return;trip.lodging.point={id:p.id,name:p.name,en:p.en,lat:p.lat,lng:p.lng};if(trip.lodging.routine==='fixed')trip.stayReturn=true;renderTrip();toast(langMsg('מקום הלינה נוסף למסלול.','Accommodation added to your trip.'))});markers.push(new maplibregl.Marker({element:el,anchor:'bottom'}).setLngLat([p.lng,p.lat]).addTo(map));}
+    }
+  }
+  // Nearby dining is optional: clicking a restaurant pin explicitly adds it to the selected day.
+  if(mapScope==='day'&&trip.foodPref!=='skip'){
+    const dayPlaces=(trip.itinerary[dayIndex]?.places||[]).map(getPlace).filter(Boolean);
+    const suggestions=[...livePlaces,...places].filter(p=>p.category==='food'&&!dayPlaces.some(q=>q.id===p.id)&&Number.isFinite(p.lat)&&Number.isFinite(p.lng)).map(p=>({p,d:Math.min(...dayPlaces.map(q=>nearDistance(q,p)))})).filter(x=>x.d<10).sort((a,b)=>a.d-b.d).slice(0,3);
+    for(const {p} of suggestions){const foodMarker=document.createElement('button');foodMarker.type='button';foodMarker.className='map-service-pin food-marker';foodMarker.textContent='🍽';foodMarker.title=localizedStatic('מסעדה – הוסף ליום','Restaurant – add to day')+': '+placeName(p);foodMarker.addEventListener('click',e=>{e.stopPropagation();addFoodToDay(p.id)});
+      markers.push(new maplibregl.Marker({element:foodMarker,anchor:'bottom'}).setLngLat([p.lng,p.lat]).addTo(map));}
+  }
+  if(mapReady){drawTripLines();focusMap(points);refreshRoads()}
 }
 $('map-style').addEventListener('change',event=>{
   const next=event.target.value;if(!mapStyles[next])return;
@@ -910,12 +969,12 @@ function openPlace(id){
  const p=getPlace(id);if(!p)return;
  const serial=++photoRequestSerial;
  $('place-title').textContent=placeName(p);
- $('place-subtitle').textContent=`${(regionNames[p.region]||regionNames.all)[lang]||''} · ${categoryName(p.category)||tr('placeTypeOther')}`;
+ $('place-subtitle').textContent=`${(regionNames[p.region]||regionNames.all)[lang]||(regionNames[p.region]||regionNames.all).en||''} · ${categoryName(p.category)||tr('placeTypeOther')}`;
  const details=p.dynamic?(p.address||p.rawType||''):placeDesc(p);
  const precisionNotice=p.geoAccuracy==='approximate'?`<p class="address-feedback error">${langMsg('המיקום משוער בלבד ולא אומת עבור מספר הבית. לפני ניווט, מומלץ לוודא את הנקודה על המפה.','This is an approximate position. Verify the exact building before navigating.')}</p>`:'';
  const subtitle=p.dynamic?`<div class="detail-copy">${esc(details||langMsg('המקום נמצא במאגר המפות הפתוח. אפשר לנווט אליו, להוסיף אותו לטיול או לשמור אותו כמקום חובה.','This place comes from open map data. You can navigate to it or add it to your itinerary.'))}</div>`:
- `<div class="detail-copy">${esc(placeDesc(p))}</div><div class="detail-bullets">${((lang==='en'?p.enHighlights:p.highlights)||[]).map(x=>`<span>${esc(x)}</span>`).join('')}</div>`;
- const external=`<div class="actions"><a class="secondary" style="text-decoration:none" href="https://www.openstreetmap.org/?mlat=${Number(p.lat)}&mlon=${Number(p.lng)}#map=15/${Number(p.lat)}/${Number(p.lng)}" target="_blank" rel="noopener noreferrer">${lang==='en'?'View on map':'הצג במפה'} ↗</a></div>`;
+ `<div class="detail-copy">${esc(placeDesc(p))}</div><div class="detail-bullets">${((lang!=='he'?p.enHighlights:p.highlights)||[]).map(x=>`<span>${esc(x)}</span>`).join('')}</div>`;
+ const external=`<div class="actions"><a class="secondary" style="text-decoration:none" href="https://www.openstreetmap.org/?mlat=${Number(p.lat)}&mlon=${Number(p.lng)}#map=15/${Number(p.lat)}/${Number(p.lng)}" target="_blank" rel="noopener noreferrer">${lang!=='he'?'View on map':'הצג במפה'} ↗</a></div>`;
  $('place-body').innerHTML=`<div class="place-photo-panel" id="verified-photo-${serial}"><div class="place-photo-placeholder">${esc(tr('verifiedPhotoWaiting'))}</div></div><div id="verified-credit-${serial}" class="place-photo-caption"></div><h3 style="font-size:14px;margin:16px 0 8px">${tr('moreInfo')}</h3>${subtitle}${precisionNotice}<p class="hint" style="margin-top:15px">${tr('timeNote')}</p>${external}`;
  appendPlaceNavigation(p);openOverlay('place-overlay');
  findPlacePhoto(p).then(photo=>{
@@ -932,27 +991,119 @@ function openPlace(id){
  });
 }
 function openOverlay(id){const el=$(id);el.classList.remove('hidden','closing');document.body.style.overflow='hidden'}function closeOverlay(id){if(id==='origin-overlay'){clearTimeout(originMapTimeout);if(originMap){try{originMap.remove()}catch(e){}}originMap=null;originMarker=null;}const el=$(id);el.classList.add('closing');setTimeout(()=>{el.classList.add('hidden');el.classList.remove('closing');if(!document.querySelector('.overlay:not(.hidden)'))document.body.style.overflow=''},230)}document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>closeOverlay(b.dataset.close)));document.querySelectorAll('.overlay').forEach(o=>o.addEventListener('click',e=>{if(e.target===o)closeOverlay(o.id)}));document.addEventListener('keydown',e=>{if(e.key==='Escape'){['place-overlay','assistant-overlay','origin-overlay','capacity-overlay','address-overlay'].forEach(id=>{if(!$(id).classList.contains('hidden'))closeOverlay(id)})}});
-function openAssistant(dIdx,pIdx){wizard={dayIndex:dIdx,placeIndex:pIdx,kind:'any',effort:'easy'};renderAssistant();openOverlay('assistant-overlay')}
-function renderAssistant(){const k=wizard.kind,e=wizard.effort;const options=[['any','any'],['nature','natureOpt'],['history','historyOpt'],['food','foodOpt'],['culture','cultureOpt'],['water','waterOpt'],['adventure','adventureOpt']];const efforts=[['easy','easy'],['moderate','moderate'],['hard','hard']];$('assistant-body').innerHTML=`<div class="wizard-group"><label>${tr('replacementType')}</label><div class="choice-grid">${options.map(([v,label])=>`<button class="choice ${k===v?'selected':''}" data-kind="${v}">${tr(label)}</button>`).join('')}</div></div><div class="wizard-group"><label>${tr('effort')}</label><div class="choice-grid">${efforts.map(([v,label])=>`<button class="choice ${e===v?'selected':''}" data-effort="${v}">${tr(label)}</button>`).join('')}</div></div><div class="wizard-group"><label for="assistant-extra">${tr('extraQuestion')}</label><textarea id="assistant-extra" placeholder="${tr('extraPlaceholder')}"></textarea></div><div class="dialog-actions"><button class="secondary" id="assistant-cancel">${tr('cancel')}</button><button class="primary" id="assistant-submit">${tr('submitReplacement')} →</button></div>`;$('assistant-body').querySelectorAll('[data-kind]').forEach(b=>b.addEventListener('click',()=>{wizard.kind=b.dataset.kind;renderAssistant()}));$('assistant-body').querySelectorAll('[data-effort]').forEach(b=>b.addEventListener('click',()=>{wizard.effort=b.dataset.effort;renderAssistant()}));$('assistant-cancel').addEventListener('click',()=>closeOverlay('assistant-overlay'));$('assistant-submit').addEventListener('click',findReplacement)}
-function findReplacement(){
- if(!trip||!wizard)return;
- const day=trip.itinerary[wizard.dayIndex],oldId=day.places[wizard.placeIndex],old=getPlace(oldId),used=new Set(trip.itinerary.flatMap(d=>d.places));
- used.delete(oldId);
- if(trip.mustVisitIds?.includes(oldId)){toast(tr('mustLocked'));return}
- const kind=wizard.kind,effort=wizard.effort,extra=$('assistant-extra').value.toLowerCase();
- const center=old||day.places.map(getPlace).find(Boolean)||trip.startPoint||plannerAnchor(trip.region);
- const limit=trip.stayReturn?55:Math.min(105,Math.max(35,plannerRadius(trip.region,trip.days)));
- let pool=[...livePlaces,...places].filter(p=>!used.has(p.id)&&p.id!==oldId&&Number.isFinite(p.lat)&&Number.isFinite(p.lng)&&
-   isInsideRegion(p,trip.region)&&nearDistance(p,center)<=limit&&!isLodgingCategory(p)&&p.category!=='city'&&p.category!=='address');
- if(kind!=='any')pool=pool.filter(p=>kind==='adventure'?['adventure','nature','hike','water'].includes(p.category):kind==='nature'?['nature','hike'].includes(p.category):p.category===kind);
- const effortMap={easy:['easy'],moderate:['easy','moderate'],hard:['moderate','hard']};
- let fit=pool.filter(p=>effortMap[effort]?.includes(p.effort));if(!fit.length)fit=pool;
- if(!fit.length){toast(langMsg('אין כרגע מקום חלופי מתאים באותו אזור. נסה סוג פעילות אחר או חפש מקום ידנית.','No suitable replacement nearby. Try another activity type or search manually.'));return}
- const words=extra.split(/[\s,،;]+/).filter(w=>w.length>2);
- function score(p){let score=0;if(p.category===kind||kind==='any')score+=5;if(effortMap[effort]?.includes(p.effort))score+=2;
-  score-=nearDistance(p,center)*.25;const hay=(p.name+' '+p.en+' '+p.desc+' '+p.enDesc).toLowerCase();words.forEach(w=>{if(hay.includes(w))score+=3});return score}
- fit.sort((a,b)=>score(b)-score(a));day.places[wizard.placeIndex]=fit[0].id;
- closeOverlay('assistant-overlay');wizard=null;renderTrip();toast(tr('replacementDone'));
+
+function openAssistant(dIdx,pIdx){
+  if(!trip||!trip.itinerary[dIdx])return;
+  const oldId=trip.itinerary[dIdx].places[pIdx];if(!oldId)return;
+  wizard={dayIndex:dIdx,placeIndex:pIdx,oldId,kind:'any',effort:'any',extra:'',allowOutside:false,found:[],loading:false};
+  renderAssistant();openOverlay('assistant-overlay');
+}
+function renderAssistant(){
+  if(!wizard)return;
+  const k=wizard.kind,e=wizard.effort;
+  const opts=[['any','any'],['nature','natureOpt'],['history','historyOpt'],['food','foodOpt'],['culture','cultureOpt'],['water','waterOpt'],['adventure','adventureOpt']];
+  const efforts=[['any','any'],['easy','easy'],['moderate','moderate'],['hard','hard']];
+  const intro=langMsg('העוזר יחפש גם מקומות חדשים ממקורות מפה פתוחים, ולא רק מתוך הרשימה הקיימת.','The assistant searches fresh open-map data, not only known places.');
+  $('assistant-body').innerHTML=`<p class="hint">${esc(intro)}</p>
+    <div class="wizard-group"><label>${tr('replacementType')}</label><div class="choice-grid">${opts.map(([v,l])=>`<button type="button" class="choice ${k===v?'selected':''}" data-kind="${v}" aria-pressed="${k===v}">${tr(l)}</button>`).join('')}</div></div>
+    <div class="wizard-group"><label>${tr('effort')}</label><div class="choice-grid">${efforts.map(([v,l])=>`<button type="button" class="choice ${e===v?'selected':''}" data-effort="${v}" aria-pressed="${e===v}">${tr(l)}</button>`).join('')}</div></div>
+    <div class="wizard-group"><label for="assistant-extra">${tr('extraQuestion')}</label><textarea id="assistant-extra" placeholder="${esc(tr('extraPlaceholder'))}" rows="3"></textarea></div>
+    <label class="hint"><input type="checkbox" id="assistant-widen" ${wizard.allowOutside?'checked':''}> ${langMsg('אפשר להציג חלופות רחוקות יותר, גם מחוץ לאזור הטיול (נבקש אישור לפני שינוי).','Allow farther alternatives, including outside the trip region (you will confirm before changing).')}</label>
+    <div class="dialog-actions"><button class="secondary" id="assistant-cancel" type="button">${tr('cancel')}</button><button class="primary" id="assistant-submit" type="button">⌕ ${tr('submitReplacement')}</button></div>
+    <div id="assistant-results" class="assistant-results" aria-live="polite"></div>`;
+  $('assistant-extra').value=wizard.extra;
+  $('assistant-extra').oninput=e=>{if(wizard)wizard.extra=e.target.value};
+  for(const btn of $('assistant-body').querySelectorAll('[data-kind]'))btn.onclick=()=>{
+    if(!wizard)return;wizard.kind=btn.dataset.kind;
+    $('assistant-body').querySelectorAll('[data-kind]').forEach(x=>{x.classList.toggle('selected',x===btn);x.setAttribute('aria-pressed',String(x===btn))});
+  };
+  for(const btn of $('assistant-body').querySelectorAll('[data-effort]'))btn.onclick=()=>{
+    if(!wizard)return;wizard.effort=btn.dataset.effort;
+    $('assistant-body').querySelectorAll('[data-effort]').forEach(x=>{x.classList.toggle('selected',x===btn);x.setAttribute('aria-pressed',String(x===btn))});
+  };
+  $('assistant-widen').onchange=e=>{if(wizard)wizard.allowOutside=e.target.checked};
+  $('assistant-submit').onclick=findReplacement;
+  $('assistant-cancel').onclick=()=>{wizard=null;closeOverlay('assistant-overlay')};
+}
+function assistantWantedKind(s){
+  const a=normalizeSearchText(s||'');
+  if(/בריכ|בריכה|מעיין|מים|חוף|שחיי|pool|swim|water|spring|beach|piscina|piscine|plage|plaza|سباحة|مسبح|пляж|бассейн/.test(a))return 'water';
+  if(/מסלול|טיול רגלי|הליכה|hiking|trail|trek|randonn|sendero|wander|пеш|поход/.test(a))return 'hike';
+  if(/מסעד|אוכל|בית קפה|restaurant|cafe|food|dining|restaurante|مطعم|ресторан/.test(a))return 'food';
+  if(/מוזיאון|עתיקות|היסטוריה|museum|history|historic|archaeolog|متحف|музей/.test(a))return 'history';
+  if(/תרבות|גלריה|הצגה|gallery|theatre|art|culture|فن|галерея/.test(a))return 'culture';
+  if(/פארק|נחל|טבע|נוף|תצפית|שמורה|forest|nature|viewpoint|park|waterfall|парк|حديقة/.test(a))return 'nature';
+  return '';
+}
+function replacementScore(p,center,desired,words,w,usedHistory){
+  const name=normalizeSearchText([p.name,p.en,p.address,p.rawType,p.desc,p.enDesc,p.cuisine||'',p.diet||''].join(' '));
+  let score=(p.quality||0)*1.3;
+  const dist=nearDistance(p,center);score-=Math.min(200,dist)*.07;
+  if(w.kind!=='any'&&p.category===w.kind)score+=24;
+  if(desired&&p.category===desired)score+=28;
+  if(desired==='hike'&&p.category==='nature')score+=5;
+  if(desired==='water'&&p.category==='nature'&&/spring|water|נחל|מעיין/.test(name))score+=8;
+  if(w.effort!=='any')score+=p.effort===w.effort?6:-3;
+  if(usedHistory.has(p.id))score-=5;
+  const all=normalizeSearchText(w.extra);if(all&&name.includes(all))score+=32;
+  for(const word of words)if(name.includes(word))score+=8;
+  // Avoid unidentified generic places dominating specific requested locations.
+  if(!p.name&&!p.en)score-=30;
+  return score;
+}
+async function findReplacement(){
+  const w=wizard;if(!trip||!w||w.loading)return;
+  const day=trip.itinerary[w.dayIndex];if(!day||day.places[w.placeIndex]!==w.oldId)return;
+  if(trip.mustVisitIds?.includes(w.oldId)){toast(tr('mustLocked'));return}
+  const prev=getPlace(w.oldId),center=prev||day.places.map(getPlace).find(Boolean)||trip.startPoint||plannerAnchor(trip.region);
+  w.loading=true;
+  const searchBtn=$('assistant-submit');searchBtn.disabled=true;
+  const results=$('assistant-results');results.innerHTML=`<div class="assistant-loading"><span class="search-tool-spinner"></span> ${esc(langMsg('מחפש אפשרויות מתאימות במאגר המקומות ובמקורות נוספים…','Searching known and live open-map places for suitable alternatives…'))}</div>`;
+  const used=new Set(trip.itinerary.flatMap(d=>d.places));const desired=assistantWantedKind(w.extra);
+  const stopWords=new Set(['with','near','like','want','place','something','that','the','and','for','this','אפשר','רוצה','יותר','משהו','במקום','אני','מתאים','ליד','באזור','אותו','את','של','הזה','מקום','למצוא','would','prefer']);
+  const words=normalizeSearchText(w.extra).split(/\s+/).filter(x=>x.length>=3&&!stopWords.has(x));
+  const radius=w.allowOutside?235:Math.max(40,Math.min(120,plannerRadius(trip.region,trip.days)*1.5));
+  let errorCount=0;
+  // The live location catalogue is refreshed on demand when looking for an alternative.
+  const pool=[...places,...livePlaces];
+  if(pool.length<8||w.extra.trim()||w.kind!=='any'){
+    try{
+      const online=await fetchPOIs(center,Math.min(115,radius));
+      if(wizard!==w)return;
+      for(const p of online){registerPlace(p);pool.push(p)}
+    }catch(e){errorCount++}
+  }
+  if(w.extra.trim().length>=3){
+    try{
+      const geocoded=await getPlaceSuggestions(w.extra.trim(),'all');if(wizard!==w)return;
+      for(const p of geocoded){registerPlace(p);pool.push(p)}
+    }catch(e){errorCount++}
+  }
+  if(w.allowOutside&&pool.filter(p=>!used.has(p.id)&&nearDistance(p,center)<=radius).length<5){
+    try{const broad=await fetchPOIs(plannerAnchor('all'),115);if(wizard!==w)return;for(const p of broad){registerPlace(p);pool.push(p)}}catch(e){errorCount++}
+  }
+  const unique=new Map();for(const p of pool)if(p?.id)unique.set(p.id,p);
+  const region=trip.region;
+  const candidates=[...unique.values()].filter(p=>p.id!==w.oldId&&!used.has(p.id)&&Number.isFinite(p.lat)&&Number.isFinite(p.lng)&&p.category!=='address'&&p.category!=='city'&&!isLodgingCategory(p)&&nearDistance(p,center)<=radius&&(w.allowOutside||isInsideRegion(p,region)));
+  const filtered=candidates.filter(p=>w.kind==='any'||w.kind==='nature'&&['nature','hike','water'].includes(p.category)||w.kind==='adventure'&&['adventure','hike','nature'].includes(p.category)||w.kind===p.category);
+  let chosen=filtered;
+  if(desired&&w.kind==='any'){const matching=chosen.filter(p=>p.category===desired||(desired==='hike'&&p.category==='nature'&&/trail|מסלול|שביל|hiking/.test(normalizeSearchText(p.name+' '+p.en+' '+p.rawType))));chosen=matching;}
+  // Never substitute an unrelated category for a clearly requested type.
+
+  const past=new Set(saved.slice(0,6).flatMap(t=>t.itinerary?.flatMap(d=>d.places)||[]));
+  const ranked=chosen.map(p=>({p,score:replacementScore(p,center,desired,words,w,past)})).sort((a,b)=>b.score-a.score).slice(0,8);
+  w.found=ranked.map(x=>x.p);w.loading=false;searchBtn.disabled=false;
+  if(!ranked.length){results.innerHTML=`<p class="assistant-notice">${esc(tr('noReplacement'))}</p>${errorCount?`<p class="hint">${esc(langMsg('חלק משירותי החיפוש אינם זמינים כרגע.','Some online sources are unavailable right now.'))}</p>`:''}<button class="secondary" type="button" id="assistant-retry-wide">${esc(langMsg('נסה חיפוש רחב יותר','Search a wider area'))}</button>`;
+    $('assistant-retry-wide').onclick=()=>{w.allowOutside=true;$('assistant-widen').checked=true;findReplacement()};return}
+  results.innerHTML=`<p class="assistant-notice">${esc(langMsg('בחר מקום כדי להחליף את האטרקציה. לא נשנה דבר בלי בחירתך.','Select a place to replace the stop. Nothing changes until you choose.'))}${errorCount?' · '+esc(langMsg('חלק ממקורות המידע לא הגיבו.','Some sources did not respond.')):''}</p><div class="assistant-grid">${ranked.map(({p})=>`<div class="assistant-result"><div><strong>${esc(placeName(p))}</strong><small>${esc(categoryName(p.category))} · ${Math.round(nearDistance(p,center))} ${tr('km')} ${!isInsideRegion(p,region)?' · '+esc(langMsg('מחוץ לאזור שנבחר','Outside selected region')):''}</small></div><button class="mini assist" type="button" data-assistant-select="${esc(p.id)}">${esc(langMsg('בחר והחלף','Choose & replace'))}</button></div>`).join('')}</div>`;
+  for(const b of results.querySelectorAll('[data-assistant-select]'))b.onclick=()=>applyReplacementChoice(w,b.dataset.assistantSelect);
+}
+function applyReplacementChoice(w,id){
+  if(w!==wizard||!trip)return;const d=trip.itinerary[w.dayIndex],p=getPlace(id);
+  if(!d||d.places[w.placeIndex]!==w.oldId||!p||trip.mustVisitIds?.includes(w.oldId))return;
+  if(!isInsideRegion(p,trip.region)&&!confirm(langMsg('המקום מחוץ לאזור שנבחר לטיול. להחליף בכל זאת?','This place is outside the selected trip region. Replace anyway?')))return;
+  d.places[w.placeIndex]=p.id;dayIndex=w.dayIndex;
+  wizard=null;closeOverlay('assistant-overlay');renderTrip();toast(tr('replacementDone'));
 }
 
 // Live discovery: user-triggered Overpass search + Commons image lookup.
@@ -964,7 +1115,7 @@ async function commonsImage(term){return null} // Avoid unverified image search 
 async function runLiveSearch(){await performPlaceSearch('home',true)}
 $('live-search').addEventListener('click',runLiveSearch);$('live-query').addEventListener('keydown',e=>{if(e.key==='Enter')runLiveSearch()});
 
-// 0.7.3 Unified place search. Public Photon is a free, rate-limited experimental service.
+// 0.7.4 Unified place search. Public Photon is a free, rate-limited experimental service.
 // No paid key or user accounts are required; no address lookup happens without a user's input.
 const searchContexts={
  start:{input:'start-search',results:'start-results',status:'start-search-status'},
@@ -1033,7 +1184,7 @@ function formatSearchTrail(p){
  if(p.address)return p.address;
  if(p.category==='city')return tr('placeTypeCity');
  if(p.category==='address')return tr('placeTypeAddress');
- return (regionNames[p.region]||regionNames.all)[lang];
+ return (regionNames[p.region]||regionNames.all)[lang]||(regionNames[p.region]||regionNames.all).en;
 }
 function renderSharedSearch(kind){
  const ctx=searchContexts[kind],input=$(ctx.input),target=$(ctx.results);if(!input||!target)return;
@@ -1052,7 +1203,7 @@ function renderSharedSearch(kind){
  }
  if(kind==='home'){
   const request=++activeHomeRequest;
-  target.innerHTML=merged.slice(0,9).map(p=>`<article class="live-card" data-search-card="${esc(p.id)}"><div class="photo-placeholder">${esc(tr('verifiedPhotoWaiting'))}</div><div class="live-card-body"><h3>${esc(placeName(p))}</h3><p>${esc(formatSearchTrail(p))}</p><div class="live-actions">${p.national&&!Number.isFinite(p.lat)?'':`<button type="button" class="mini" data-search-detail="${esc(p.id)}">${tr('details')}</button>`}<button type="button" class="mini assist" data-search-choose="${esc(p.id)}">${lang==='en'?'Add to trip':'הוסף לטיול'}</button></div><div class="source-line">${esc(p.national?langMsg('מאגר יישובים ורחובות','National locality / street index'):p.dynamic?tr('searchFromWeb'):tr('searchFromCatalog'))} · ${p.national?'data.gov.il / datasets-il':'© OpenStreetMap contributors'}</div></div></article>`).join('');
+  target.innerHTML=merged.slice(0,9).map(p=>`<article class="live-card" data-search-card="${esc(p.id)}"><div class="photo-placeholder">${esc(tr('verifiedPhotoWaiting'))}</div><div class="live-card-body"><h3>${esc(placeName(p))}</h3><p>${esc(formatSearchTrail(p))}</p><div class="live-actions">${p.national&&!Number.isFinite(p.lat)?'':`<button type="button" class="mini" data-search-detail="${esc(p.id)}">${tr('details')}</button>`}<button type="button" class="mini assist" data-search-choose="${esc(p.id)}">${lang!=='he'?'Add to trip':'הוסף לטיול'}</button></div><div class="source-line">${esc(p.national?langMsg('מאגר יישובים ורחובות','National locality / street index'):p.dynamic?tr('searchFromWeb'):tr('searchFromCatalog'))} · ${p.national?'data.gov.il / datasets-il':'© OpenStreetMap contributors'}</div></div></article>`).join('');
   target.querySelectorAll('[data-search-detail]').forEach(b=>b.addEventListener('click',()=>openPlace(b.dataset.searchDetail)));
   target.querySelectorAll('[data-search-choose]').forEach(b=>b.addEventListener('click',()=>selectSearchPlace('home',b.dataset.searchChoose)));
   if(!searchResult?.complete)return;
@@ -1099,7 +1250,7 @@ function selectGeocodedPlace(kind,id){
  }
  if(kind==='home'){
    pendingLivePlaceId=p.id;if(!mustVisitIds.includes(p.id))mustVisitIds.push(p.id);
-   renderMustSelected();showView('create');toast(lang==='en'?'Added to your future trip.':'המקום ייכלל בטיול שתיצור.');
+   renderMustSelected();showView('create');toast(lang!=='he'?'Added to your future trip.':'המקום ייכלל בטיול שתיצור.');
  }
 }
 function photonResultAsPlace(f){
@@ -1123,7 +1274,7 @@ async function getPlaceSuggestions(q,region='all'){
  const action=async()=>{
    const wait=1350-(Date.now()-lastPhotonRequestAt);if(wait>0)await sleepFor(wait);
    lastPhotonRequestAt=Date.now();
-   const params=new URLSearchParams({q:q+'',limit:'15',lang:lang==='en'?'en':'he',bbox:photonBounds.join(',')});
+   const params=new URLSearchParams({q:q+'',limit:'15',lang:['he','en','de','fr','it'].includes(lang)?lang:'en',bbox:photonBounds.join(',')});
    // bbox is a geographic restriction, NOT a guarantee all OSM places will be present.
    const controller=new AbortController();const timeout=setTimeout(()=>controller.abort(),13000);
    try{
@@ -1157,7 +1308,7 @@ async function performPlaceSearch(kind,explicit=false){
    placeSearchState[kind]={query:q,items,requestId,complete:true};renderSharedSearch(kind);
    const total=getLocalResults(kind,q).length+items.length;
    searchStatus(kind,total?
-     (lang==='en'?`Found places for “${q}”. Select a result.`:`נמצאו מקומות עבור ״${q}״. לחץ על מקום לבחירה.`):tr('searchNoResults'));
+     (lang!=='he'?`Found places for “${q}”. Select a result.`:`נמצאו מקומות עבור ״${q}״. לחץ על מקום לבחירה.`):tr('searchNoResults'));
  }catch(e){
    if(input.value.trim()!==q||placeSearchState[kind]?.requestId!==requestId)return;
    renderSharedSearch(kind);
@@ -1386,7 +1537,7 @@ function openAddressDialog(kind='start',pre={}){
  addressIntent=kind;addressReq++;addressBusy=false;$('addr-find').disabled=false;
  $('addr-city').value=pre.city||'';$('addr-street').value=pre.street||'';$('addr-house').value=pre.house||'';$('addr-apt').value=pre.apt||'';$('addr-label').value=pre.label||'';$('addr-coords').value='';
  $('addr-results').innerHTML='';$('addr-city-options').innerHTML='';$('addr-street-options').innerHTML='';
- const en=lang==='en';
+ const en=lang!=='he';
  $('address-title').textContent=en?'Add an address or apartment':'הוספת כתובת או דירה';
  $('address-intro').textContent=en?'Choose a city, street and optional house / apartment. We will look for its position.':'בחר יישוב ורחוב, הוסף מספר בית ופרטי דירה לפי הצורך, וננסה לזהות את המיקום.';
  $('addr-city-label').textContent=en?'City / locality':'יישוב / עיר';$('addr-street-label').textContent=en?'Street':'רחוב';$('addr-house-label').textContent=en?'House number':'מספר בית';$('addr-apt-label').textContent=en?'Apartment or floor (optional)':'דירה / קומה (לא חובה)';
@@ -1534,7 +1685,7 @@ document.querySelectorAll('[data-set-lang]').forEach(btn=>btn.addEventListener('
 function GenGoogleSearch(query){const url='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(query||'Israel');window.open(url,'_blank','noopener,noreferrer')}
 // Fast access to the national catalog without making users search a separate website.
 const loadNationwideButton=document.createElement('button');loadNationwideButton.type='button';loadNationwideButton.className='mini';
-loadNationwideButton.textContent=lang==='en'?'Load Israel city and street index':'טעינת מאגר יישובים ורחובות ארצי';
+loadNationwideButton.textContent=lang!=='he'?'Load Israel city and street index':'טעינת מאגר יישובים ורחובות ארצי';
 loadNationwideButton.title=langMsg('טוען את מאגר היישובים והרחובות הארצי דרך האינטרנט','Loads the nationwide city and street catalog via the internet');
 const homeActions=$('home-address')?.parentElement;if(homeActions)homeActions.append(loadNationwideButton);
 loadNationwideButton.addEventListener('click',async()=>{
@@ -1547,7 +1698,7 @@ loadNationwideButton.addEventListener('click',async()=>{
 
 
 // ------------------------------------------------------------
-// Discover Israel 0.7.3 — genuine regional POI discovery.
+// Discover Israel 0.7.4 — genuine regional POI discovery.
 // OpenStreetMap/Overpass is a live, volunteer-maintained resource.
 // Results are not exhaustive and cannot verify opening/availability.
 // ------------------------------------------------------------
@@ -1602,7 +1753,7 @@ function osmToPlace(el){
 }
 function overpassQuery(anchor,radius){
  const r=Math.min(115000,Math.max(12000,Math.round(radius*1000))),at=`(around:${r},${anchor.lat.toFixed(5)},${anchor.lng.toFixed(5)})`;
- const q=`[out:json][timeout:15];(nwr${at}["name"]["tourism"~"^(attraction|viewpoint|museum|gallery|zoo|aquarium|hotel|guest_house|hostel|motel|chalet|apartment|camp_site|caravan_site|picnic_site|information)$"];nwr${at}["name"]["leisure"~"^(park|garden|nature_reserve|swimming_pool|water_park|beach_resort|marina|sports_centre)$"];nwr${at}["name"]["natural"~"^(beach|spring|waterfall|peak|cave_entrance|bay|hot_spring)$"];nwr${at}["name"]["historic"];nwr${at}["name"]["amenity"~"^(restaurant|cafe|fast_food|theatre|arts_centre)$"];nwr${at}["name"]["route"="hiking"];);out center 1250;`;
+ const q=`[out:json][timeout:15];(nwr${at}["name"]["tourism"~"^(attraction|viewpoint|museum|gallery|zoo|aquarium|hotel|guest_house|hostel|motel|chalet|apartment|camp_site|caravan_site|picnic_site|information|theme_park|wilderness_hut)$"];nwr${at}["name"]["leisure"~"^(park|garden|nature_reserve|swimming_pool|water_park|beach_resort|marina|sports_centre|sports_hall|bird_hide|miniature_golf)$"];nwr${at}["name"]["natural"~"^(beach|spring|waterfall|peak|cave_entrance|bay|hot_spring)$"];nwr${at}["name"]["historic"];nwr${at}["name"]["amenity"~"^(restaurant|cafe|fast_food|ice_cream|food_court|theatre|arts_centre|community_centre)$"];nwr${at}["name"]["route"="hiking"];);out center 1250;`;
  return q;
 }
 async function fetchPOIs(anchor,radius,force=false){
@@ -1671,13 +1822,13 @@ function renderRestaurantSuggestions(){
  if(!nearby.length)return;
  area.innerHTML=`<div class="suggestion-panel"><strong>${langMsg('🍽️ מסעדות באזור המסלול','🍽️ Restaurants near your route')}</strong><p class="hint">${langMsg('מקומות ממאגר פתוח — בדקו שעות פעילות, תפריט וזמינות ישירות עם העסק.','Open data; verify opening times and availability directly.')}</p>${nearby.map(({p,d})=>`<div class="suggestion-place"><span>${esc(placeName(p))} <small class="muted">· ${Math.round(d*10)/10} ${tr('km')}</small></span><button class="mini" data-food-view="${esc(p.id)}">${langMsg('פרטים','Details')}</button><button class="mini assist" data-food-add="${esc(p.id)}">${langMsg('הוסף ליום','Add to day')}</button></div>`).join('')}</div>`;
  area.querySelectorAll('[data-food-view]').forEach(b=>b.onclick=()=>openPlace(b.dataset.foodView));
- area.querySelectorAll('[data-food-add]').forEach(b=>b.onclick=()=>{if(!trip.itinerary[dayIndex].places.includes(b.dataset.foodAdd))trip.itinerary[dayIndex].places.push(b.dataset.foodAdd);renderTrip()});
+ area.querySelectorAll('[data-food-add]').forEach(b=>b.onclick=()=>addFoodToDay(b.dataset.foodAdd));
 }
 function renderStaySuggestions(){
  const target=$('day-stay-suggestions');if(!target)return;target.innerHTML='';if(!trip||trip.lodging?.type==='none')return;
  const pts=trip.itinerary[dayIndex].places.map(getPlace).filter(Boolean),center=pts[0]||trip.startPoint;if(!center)return;
  const chosen=trip.lodging?.point;
- if(chosen){target.innerHTML=`<div class="suggestion-panel"><strong>${langMsg('🛏 מקום הלינה שנבחר','🛏 Selected accommodation')}</strong><div class="suggestion-place"><span>${esc(chosen.name)}</span>${navigationButtons(chosen)}</div></div>`;return}
+ if(chosen){target.innerHTML=`<div class="suggestion-panel"><strong>${langMsg('🛏 מקום הלינה שנבחר למסלול','🛏 Selected accommodation for this trip')}</strong><div class="suggestion-place"><span>${esc(lang==='he'?chosen.name:(chosen.en||chosen.name))}</span>${navigationButtons(chosen)}<button class="mini" id="stay-view-detail">${tr('details')}</button></div></div>`;target.querySelector('#stay-view-detail').onclick=()=>openPlace(chosen.id);return}
  const lodging=[...livePlaces,...places].filter(p=>isLodgingCategory(p)&&stayTypeMatches(p,trip.lodging?.type)).map(p=>({p,d:nearDistance(p,center)})).filter(x=>x.d<30).sort((a,b)=>a.d-b.d).slice(0,3);
  if(!lodging.length)return;
  target.innerHTML=`<div class="suggestion-panel"><strong>${langMsg('🛏 אפשרויות לינה בסביבה','🛏 Nearby stays')}</strong><p class="hint">${langMsg('ללא אימות מחיר, חדרים פנויים או שירותים. יש לבדוק מול המקום.','Prices, vacancies and amenities are not verified.')}</p>${lodging.map(({p,d})=>`<div class="suggestion-place"><span>${esc(placeName(p))} · ${Math.round(d)} ${tr('km')}</span><button class="mini assist" data-stay-choose="${esc(p.id)}">${langMsg('בחר לינה','Choose')}</button></div>`).join('')}</div>`;
@@ -1944,7 +2095,7 @@ $('stay-search').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDef
 $('stay-pick-map').addEventListener('click',()=>{pickerTarget='stay';openOriginPicker()});
 document.querySelectorAll('#stay-features .chip').forEach(b=>b.onclick=()=>b.classList.toggle('selected'));
 // Minimal diagnostics aid our quality checks, without exposing user tokens or network credentials.
-window.DiscoverIsraelQA={trip:()=>trip?JSON.parse(JSON.stringify(trip)):null,sourceCount:()=>livePlaces.length,routeLines:()=>verifiedLineFeatures().length,sourceVersion:'0.7.3'};
+window.DiscoverIsraelQA={trip:()=>trip?JSON.parse(JSON.stringify(trip)):null,sourceCount:()=>livePlaces.length,routeLines:()=>verifiedLineFeatures().length,sourceVersion:'0.7.4'};
 
 // New onboarding: stable personal preferences, not details for a single trip.
 const onboardingSteps=[
@@ -1956,19 +2107,198 @@ const onboardingSteps=[
 ];let onboardIndex=0,onboardAnswers={...profile};
 function renderOnboard(){
  const st=onboardingSteps[onboardIndex];$('onboard-progress').style.width=((onboardIndex+1)/onboardingSteps.length*100)+'%';
- $('onboard-content').innerHTML=`<div class="onboard-step"><div class="eyebrow">${lang==='en'?`YOUR PREFERENCES · ${onboardIndex+1}/${onboardingSteps.length}`:`ההעדפות שלך · ${onboardIndex+1} מתוך ${onboardingSteps.length}`}</div><h2>${esc(lang==='en'?st.enTitle:st.title)}</h2><p>${esc(lang==='en'?st.enSub:st.sub)}</p><div class="answer-grid">${st.opts.map(([v,t,d,et,ed])=>`<button class="answer ${onboardAnswers[st.key]===v?'selected':''}" data-answer="${esc(v)}"><strong>${esc(lang==='en'?et:t)}</strong><small>${esc(lang==='en'?ed:d)}</small></button>`).join('')}</div><p class="onboard-help">${langMsg('הסקר עוסק בך בדרך כלל, ולא בטיול מסוים. בחירה בטיול תגבר תמיד על ההעדפה הכללית.','These are general preferences, not requirements for a specific trip.')}</p><div class="onboard-nav"><button class="skip-link" id="onboard-skip">${langMsg('דלג','Skip')}</button><div style="display:flex;gap:8px"><button class="secondary" id="onboard-back" ${onboardIndex===0?'disabled':''}>${langMsg('חזרה','Back')}</button><button class="primary" id="onboard-next">${onboardIndex===onboardingSteps.length-1?langMsg('סיום','Finish'):langMsg('המשך','Continue')}</button></div></div></div>`;
- $('onboard-content').querySelectorAll('[data-answer]').forEach(b=>b.onclick=()=>{onboardAnswers[st.key]=b.dataset.answer;renderOnboard()});
+ $('onboard-content').innerHTML=`<div class="onboard-step"><div class="eyebrow">${lang!=='he'?`YOUR PREFERENCES · ${onboardIndex+1}/${onboardingSteps.length}`:`ההעדפות שלך · ${onboardIndex+1} מתוך ${onboardingSteps.length}`}</div><h2>${esc(lang!=='he'?st.enTitle:st.title)}</h2><p>${esc(lang!=='he'?st.enSub:st.sub)}</p><div class="answer-grid">${st.opts.map(([v,t,d,et,ed])=>`<button class="answer ${onboardAnswers[st.key]===v?'selected':''}" data-answer="${esc(v)}"><strong>${esc(lang!=='he'?et:t)}</strong><small>${esc(lang!=='he'?ed:d)}</small></button>`).join('')}</div><p class="onboard-help">${langMsg('הסקר עוסק בך בדרך כלל, ולא בטיול מסוים. בחירה בטיול תגבר תמיד על ההעדפה הכללית.','These are general preferences, not requirements for a specific trip.')}</p><div class="onboard-nav"><button class="skip-link" id="onboard-skip">${langMsg('דלג','Skip')}</button><div style="display:flex;gap:8px"><button class="secondary" id="onboard-back" ${onboardIndex===0?'disabled':''}>${langMsg('חזרה','Back')}</button><button class="primary" id="onboard-next">${onboardIndex===onboardingSteps.length-1?langMsg('סיום','Finish'):langMsg('המשך','Continue')}</button></div></div></div>`;
+ $('onboard-content').querySelectorAll('[data-answer]').forEach(b=>b.onclick=()=>{onboardAnswers[st.key]=b.dataset.answer;for(const item of $('onboard-content').querySelectorAll('[data-answer]')){item.classList.toggle('selected',item===b);item.setAttribute('aria-pressed',String(item===b))}});
  $('onboard-back').onclick=()=>{if(onboardIndex>0){onboardIndex--;renderOnboard()}};
  $('onboard-skip').onclick=finishOrAdvanceOnboard;$('onboard-next').onclick=finishOrAdvanceOnboard;
 }
 function finishOrAdvanceOnboard(){
  if(onboardIndex<onboardingSteps.length-1){onboardIndex++;renderOnboard();return}
  profile={...onboardAnswers};try{localStorage.setItem(PROFILE_KEY,JSON.stringify(profile));localStorage.setItem('discoverIsraelOnboarding_v04','1')}catch(e){}
- $('onboard').classList.add('hidden');if(!editingTripId)applyProfileToForm();showView('home');toast(langMsg('ההעדפות נשמרו. בכל טיול אפשר לבחור אחרת.','Preferences saved; each trip can be different.'));
+ $('onboard').classList.add('hidden');if(!editingTripId)applyProfileToForm();showView('home');toast(langMsg('ההעדפות נשמרו. בכל טיול אפשר לבחור אחרת.','Preferences saved; each trip can be different.'));maybeShowGuide();
 }
-function startOnboard(){onboardIndex=0;onboardAnswers={...profile};renderOnboard();$('onboard').classList.remove('hidden')}
+function startOnboard(){onboardIndex=0;onboardAnswers={...profile};renderOnboard();$('onboard').classList.remove('hidden');$('onboard').querySelector('.onboard-card').scrollTop=0}
 
-// 0.6 — start location, required stops and map scope UI wiring.
+ // Discover Israel 0.7.4 enhancements — shared service selection, account-free profile, and localization.
+const LANG_INFO=[{"code":"he","native":"עברית","en":"Hebrew"},{"code":"en","native":"English","en":"English"},{"code":"ar","native":"العربية","en":"Arabic"},{"code":"ru","native":"Русский","en":"Russian"},{"code":"fr","native":"Français","en":"French"},{"code":"es","native":"Español","en":"Spanish"},{"code":"de","native":"Deutsch","en":"German"},{"code":"it","native":"Italiano","en":"Italian"},{"code":"pt","native":"Português","en":"Portuguese"},{"code":"zh","native":"中文","en":"Chinese"},{"code":"ja","native":"日本語","en":"Japanese"},{"code":"tr","native":"Türkçe","en":"Turkish"}];
+
+const LOCALE_KEYS={"ar":{"navHome":"الرئيسية","navPlan":"تخطيط رحلة","navSaved":"الرحلات المحفوظة","heroTitle":"كل إسرائيل. على راحتك.","startPlanning":"ابدأ التخطيط ←","regionsTitle":"إلى أين تريد الذهاب؟","planTitle":"لنخطط رحلتك.","tripName":"اسم الرحلة","days":"عدد الأيام","budget":"الميزانية","region":"المنطقة","generate":"إنشاء المسار ←","yourRoute":"خط سير رحلتي","saveTrip":"حفظ الرحلة","savedTitle":"رحلاتك","newTrip":"رحلة جديدة","assistantTitle":"لنجد مكانًا أفضل","change":"تغيير المكان","details":"التفاصيل","day":"اليوم","addPlace":"إضافة مكان","add":"إضافة","backHome":"العودة للرئيسية","open":"فتح","delete":"حذف","searchAll":"البحث في إسرائيل","searching":"جارٍ البحث…","replacementType":"ما نوع التجربة التي تفضلها؟","submitReplacement":"ابحث عن بديل","replacementDone":"تم تغيير المكان في المسار","noReplacement":"لم نجد بديلاً مناسبًا","cancel":"إلغاء","company":"مع من تسافر؟","solo":"بمفردي","couple":"زوجان","friends":"أصدقاء","family":"عائلة","mapTitle":"خريطة الرحلة","savedSub":"الرحلات المحفوظة على هذا الجهاز"},"ru":{"navHome":"Главная","navPlan":"План поездки","navSaved":"Сохранённые поездки","heroTitle":"Весь Израиль. В вашем темпе.","startPlanning":"Спланировать поездку →","regionsTitle":"Куда отправимся?","planTitle":"Спланируем ваше путешествие.","tripName":"Название поездки","days":"Дней","budget":"Бюджет","region":"Регион","generate":"Создать маршрут →","yourRoute":"Мой маршрут","saveTrip":"Сохранить поездку","savedTitle":"Ваши поездки","newTrip":"Новая поездка","assistantTitle":"Найдём альтернативу","change":"Заменить место","details":"Подробнее","day":"День","addPlace":"Добавить место","add":"Добавить","backHome":"На главную","open":"Открыть","delete":"Удалить","searchAll":"Поиск по Израилю","searching":"Поиск…","replacementType":"Какой отдых вам подходит?","submitReplacement":"Найти замену","replacementDone":"Место в маршруте заменено","noReplacement":"Подходящая альтернатива не найдена","cancel":"Отмена","company":"С кем путешествуете?","solo":"Один","couple":"Пара","friends":"Друзья","family":"Семья","mapTitle":"Карта маршрута","savedSub":"Поездки сохранены на этом устройстве"},"fr":{"navHome":"Accueil","navPlan":"Planifier","navSaved":"Voyages enregistrés","heroTitle":"Tout Israël. À votre rythme.","startPlanning":"Planifier un voyage →","regionsTitle":"Où souhaitez-vous aller ?","planTitle":"Créons votre voyage.","tripName":"Nom du voyage","days":"Nombre de jours","budget":"Budget","region":"Région","generate":"Créer l'itinéraire →","yourRoute":"Mon itinéraire","saveTrip":"Enregistrer","savedTitle":"Vos voyages","newTrip":"Nouveau voyage","assistantTitle":"Trouvons une meilleure option","change":"Changer de lieu","details":"Détails","day":"Jour","addPlace":"Ajouter un lieu","add":"Ajouter","backHome":"Accueil","open":"Ouvrir","delete":"Supprimer","searchAll":"Rechercher en Israël","searching":"Recherche…","replacementType":"Quel type d'expérience préférez-vous ?","submitReplacement":"Trouver une alternative","replacementDone":"Lieu remplacé dans l'itinéraire","noReplacement":"Aucune alternative trouvée","cancel":"Annuler","company":"Avec qui voyagez-vous ?","solo":"Seul","couple":"En couple","friends":"Amis","family":"Famille","mapTitle":"Carte du voyage","savedSub":"Voyages enregistrés sur cet appareil"},"es":{"navHome":"Inicio","navPlan":"Planificar viaje","navSaved":"Viajes guardados","heroTitle":"Todo Israel. A tu ritmo.","startPlanning":"Planificar viaje →","regionsTitle":"¿A dónde quieres ir?","planTitle":"Vamos a planear tu viaje.","tripName":"Nombre del viaje","days":"Número de días","budget":"Presupuesto","region":"Región","generate":"Crear itinerario →","yourRoute":"Mi itinerario","saveTrip":"Guardar viaje","savedTitle":"Tus viajes","newTrip":"Viaje nuevo","assistantTitle":"Busquemos otra opción","change":"Cambiar lugar","details":"Detalles","day":"Día","addPlace":"Añadir lugar","add":"Añadir","backHome":"Volver al inicio","open":"Abrir","delete":"Eliminar","searchAll":"Buscar en Israel","searching":"Buscando…","replacementType":"¿Qué experiencia prefieres?","submitReplacement":"Buscar alternativa","replacementDone":"Lugar cambiado en el itinerario","noReplacement":"No encontramos una alternativa","cancel":"Cancelar","company":"¿Con quién viajas?","solo":"Solo","couple":"En pareja","friends":"Amigos","family":"Familia","mapTitle":"Mapa del viaje","savedSub":"Viajes guardados en este dispositivo"},"de":{"navHome":"Startseite","navPlan":"Reise planen","navSaved":"Gespeicherte Reisen","heroTitle":"Ganz Israel. In deinem Tempo.","startPlanning":"Reise planen →","regionsTitle":"Wohin möchtest du reisen?","planTitle":"Planen wir deine Reise.","tripName":"Reisename","days":"Anzahl Tage","budget":"Budget","region":"Region","generate":"Route erstellen →","yourRoute":"Meine Reiseroute","saveTrip":"Reise speichern","savedTitle":"Deine Reisen","newTrip":"Neue Reise","assistantTitle":"Finden wir eine bessere Option","change":"Ort ändern","details":"Details","day":"Tag","addPlace":"Ort hinzufügen","add":"Hinzufügen","backHome":"Zur Startseite","open":"Öffnen","delete":"Löschen","searchAll":"In Israel suchen","searching":"Suche läuft…","replacementType":"Welche Aktivität passt besser?","submitReplacement":"Alternative suchen","replacementDone":"Ort in der Route ersetzt","noReplacement":"Keine passende Alternative gefunden","cancel":"Abbrechen","company":"Mit wem reist du?","solo":"Allein","couple":"Als Paar","friends":"Freunde","family":"Familie","mapTitle":"Reisekarte","savedSub":"Reisen werden auf diesem Gerät gespeichert"},"it":{"navHome":"Home","navPlan":"Pianifica viaggio","navSaved":"Viaggi salvati","heroTitle":"Tutto Israele. Al tuo ritmo.","startPlanning":"Pianifica un viaggio →","regionsTitle":"Dove vuoi andare?","planTitle":"Pianifichiamo il tuo viaggio.","tripName":"Nome del viaggio","days":"Numero di giorni","budget":"Budget","region":"Regione","generate":"Crea itinerario →","yourRoute":"Il mio itinerario","saveTrip":"Salva viaggio","savedTitle":"I tuoi viaggi","newTrip":"Nuovo viaggio","assistantTitle":"Troviamo un'alternativa","change":"Cambia luogo","details":"Dettagli","day":"Giorno","addPlace":"Aggiungi un luogo","add":"Aggiungi","backHome":"Torna alla home","open":"Apri","delete":"Elimina","searchAll":"Cerca in Israele","searching":"Ricerca…","replacementType":"Che esperienza preferisci?","submitReplacement":"Trova alternativa","replacementDone":"Luogo sostituito nell'itinerario","noReplacement":"Nessuna alternativa trovata","cancel":"Annulla","company":"Con chi viaggi?","solo":"Da solo","couple":"In coppia","friends":"Amici","family":"Famiglia","mapTitle":"Mappa del viaggio","savedSub":"I viaggi vengono salvati su questo dispositivo"},"pt":{"navHome":"Início","navPlan":"Planejar viagem","navSaved":"Viagens salvas","heroTitle":"Todo Israel. No seu ritmo.","startPlanning":"Planejar viagem →","regionsTitle":"Para onde você quer ir?","planTitle":"Vamos planejar sua viagem.","tripName":"Nome da viagem","days":"Número de dias","budget":"Orçamento","region":"Região","generate":"Criar roteiro →","yourRoute":"Meu roteiro","saveTrip":"Salvar viagem","savedTitle":"Suas viagens","newTrip":"Nova viagem","assistantTitle":"Vamos encontrar outra opção","change":"Trocar lugar","details":"Detalhes","day":"Dia","addPlace":"Adicionar lugar","add":"Adicionar","backHome":"Voltar ao início","open":"Abrir","delete":"Excluir","searchAll":"Buscar em Israel","searching":"Pesquisando…","replacementType":"Que experiência você prefere?","submitReplacement":"Encontrar alternativa","replacementDone":"Lugar substituído no roteiro","noReplacement":"Nenhuma alternativa encontrada","cancel":"Cancelar","company":"Com quem você viaja?","solo":"Sozinho","couple":"Casal","friends":"Amigos","family":"Família","mapTitle":"Mapa da viagem","savedSub":"Viagens salvas neste dispositivo"},"zh":{"navHome":"首页","navPlan":"规划旅行","navSaved":"已保存的行程","heroTitle":"以你的节奏探索以色列。","startPlanning":"开始规划 →","regionsTitle":"想去哪里？","planTitle":"一起规划行程。","tripName":"行程名称","days":"天数","budget":"预算","region":"地区","generate":"生成路线 →","yourRoute":"我的行程","saveTrip":"保存行程","savedTitle":"你的行程","newTrip":"新建行程","assistantTitle":"寻找更合适的地点","change":"更换地点","details":"详情","day":"第几天","addPlace":"添加地点","add":"添加","backHome":"返回首页","open":"打开","delete":"删除","searchAll":"搜索以色列","searching":"搜索中…","replacementType":"你喜欢哪种体验？","submitReplacement":"查找替代地点","replacementDone":"行程地点已更换","noReplacement":"未找到合适的替代地点","cancel":"取消","company":"和谁一起旅行？","solo":"独自","couple":"情侣","friends":"朋友","family":"家庭","mapTitle":"行程地图","savedSub":"行程保存在此设备上"},"ja":{"navHome":"ホーム","navPlan":"旅行を計画","navSaved":"保存した旅行","heroTitle":"イスラエルを自分のペースで。","startPlanning":"旅行を計画 →","regionsTitle":"どこへ行きますか？","planTitle":"旅行を計画しましょう。","tripName":"旅行名","days":"日数","budget":"予算","region":"地域","generate":"旅程を作成 →","yourRoute":"旅程","saveTrip":"旅行を保存","savedTitle":"保存した旅行","newTrip":"新しい旅行","assistantTitle":"別の場所を探しましょう","change":"場所を変更","details":"詳細","day":"日目","addPlace":"場所を追加","add":"追加","backHome":"ホームに戻る","open":"開く","delete":"削除","searchAll":"イスラエルで検索","searching":"検索中…","replacementType":"どんな体験が好きですか？","submitReplacement":"代わりの場所を探す","replacementDone":"旅程の場所を変更しました","noReplacement":"適切な場所が見つかりません","cancel":"キャンセル","company":"誰と旅行しますか？","solo":"一人","couple":"カップル","friends":"友達","family":"家族","mapTitle":"旅行マップ","savedSub":"旅行はこの端末に保存されます"},"tr":{"navHome":"Ana sayfa","navPlan":"Gezi planla","navSaved":"Kaydedilen geziler","heroTitle":"Tüm İsrail. Kendi hızında.","startPlanning":"Gezi planla →","regionsTitle":"Nereye gitmek istersin?","planTitle":"Gezini planlayalım.","tripName":"Gezi adı","days":"Gün sayısı","budget":"Bütçe","region":"Bölge","generate":"Rota oluştur →","yourRoute":"Gezi rotam","saveTrip":"Geziyi kaydet","savedTitle":"Gezilerin","newTrip":"Yeni gezi","assistantTitle":"Daha iyi bir seçenek bulalım","change":"Yeri değiştir","details":"Ayrıntılar","day":"Gün","addPlace":"Yer ekle","add":"Ekle","backHome":"Ana sayfaya dön","open":"Aç","delete":"Sil","searchAll":"İsrail'de ara","searching":"Aranıyor…","replacementType":"Nasıl bir deneyim istersin?","submitReplacement":"Alternatif bul","replacementDone":"Rota güncellendi","noReplacement":"Uygun alternatif bulunamadı","cancel":"İptal","company":"Kiminle geziyorsun?","solo":"Tek başıma","couple":"Çift olarak","friends":"Arkadaşlar","family":"Aile","mapTitle":"Gezi haritası","savedSub":"Geziler bu cihaza kaydedilir"}};
+const EXTRA_TEXT_EN={
+ 'מקום מסוים בראש? בואו נמצא אותו.':'Have a place in mind? Let’s find it.',
+ 'חפשו ערים, כתובות ואטרקציות ברחבי ישראל. בחרו מקום והוסיפו אותו לטיול שלכם.':'Search cities, addresses and attractions across Israel. Choose a place and add it to your trip.',
+ 'כל הארץ':'All Israel','צפון':'North','מרכז והחוף':'Center & coast','ירושלים והסביבה':'Jerusalem area','דרום':'South',
+ 'חיפוש בכל הארץ ←':'Search across Israel →','חפש':'Search','הוסף מקום':'Add a place',
+ 'חפשו מקום בישראל. התוצאות מגיעות ממאגר מקומות פתוח ומחיפוש חינמי באינטרנט.':'Search for a place in Israel. Results come from open map data and free search services.',
+ '⌕ חפש בכל הארץ':'⌕ Search across Israel','⌖ סמן מקום על המפה':'⌖ Pin a place on the map',
+ 'המסלול שלי':'My trip','המקומות ביום הנבחר':'Places on the selected day',
+ 'טוענים את המפה…':'Loading the map…','המפה דורשת חיבור לאינטרנט.':'This map needs an internet connection.','נסה שוב':'Retry',
+ 'מה לעשות עם המקום?':'What would you like to do with this place?',
+ 'המפה עצמאית ולא מציגה סימוני מסלול. מידע ומקומות זמינים בהתאם למקורות המפות הפתוחים.':'This is an independent clean map. Available places depend on open-map data.',
+ 'מתאימים את הטיול':'Tailoring your trip',
+ '↻ נסה לטעון שוב':'↻ Retry loading','או הדבק קואורדינטות (קו רוחב, קו אורך)':'Or paste coordinates (latitude, longitude)',
+ 'השתמש בנקודה':'Use these coordinates','הוספת כתובת מדויקת':'Add an address',
+ 'בחר עיר ורחוב, הוסף מספר בית, ונמצא את המיקום.':'Choose a city and street, enter a house number and we will locate it.',
+ 'יישוב / עיר':'Town / city','רחוב':'Street','מספר בית':'House number','דירה / קומה (לא חובה)':'Apartment / floor (optional)',
+ 'שם אישי למקום (רשות)':'Personal place name (optional)','קואורדינטות אם ידועות (לא חובה)':'Coordinates, if known (optional)',
+ 'אפשר להדביק קו רוחב ואורך או קישור Google Maps עם מיקום מדויק. פרטי דירה אינם נשלחים לשירות החיפוש.':'Paste latitude and longitude or a Google Maps link with coordinates. Apartment details are not sent to search services.',
+ 'אין צורך לשלם או להירשם.':'No registration or payment required.','↗ חפש גם ב־Google Maps':'↗ Search in Google Maps',
+ '⌖ סמן מיקום על המפה':'⌖ Mark location on map','שמור לפי נקודה ידנית':'Save by manual coordinates','⌕ מצא כתובת':'⌕ Find address',
+ 'לא נסמן מספר בית כמדויק אם שירות המפות לא הצליח לאמת אותו. במקרה כזה אפשר לבחור מיקום ידנית.':'We never mark a house number as exact unless the map data confirms it. You may place a pin manually.',
+ 'עברית':'עברית','ממשק בעברית':'Hebrew interface',
+ 'גרסה 0.7.4':'Version 0.7.4',
+};
+const EXTRA_PREFIX_EN=[
+ [/^חיפוש מקומות: Photon/i,'Place search: Photon / OpenStreetMap · Settlement and street records: open government-based data · Place photographs: Wikipedia / Wikimedia Commons. Coverage varies and not every building or business is included.'],
+ [/^Discover Israel 0\.7\.4 · תכנון אזורי/i,'Discover Israel 0.7.4 · Regional planning and live maps: OpenStreetMap / Wikimedia Commons · Weather:'],
+ [/^· מקומות: © OpenStreetMap/i,'· Places: © OpenStreetMap / Overpass · Conservative route geometry: Natural Earth (Public Domain) ·'],
+ [/^קווי דרך מוצגים רק/i,'Road lines appear only when they pass geographic safeguards. Stops without a verified route are shown without a misleading line. © OpenStreetMap, OpenFreeMap, OSRM.']
+];
+let originalRawNodes=null;
+function localizeOriginalText(value){
+ const text=String(value||'').trim();
+ if(Object.prototype.hasOwnProperty.call(EXTRA_TEXT_EN,text))return EXTRA_TEXT_EN[text];
+ for(const [re,en] of EXTRA_PREFIX_EN)if(re.test(text))return en;
+ return null;
+}
+function localizedStatic(he,en){
+ if(lang==='he')return he;
+ const k=Object.keys(T.en).find(x=>T.en[x]===en);
+ if(k&&T[lang]?.[k])return T[lang][k];
+ return EXTRA_WORDS[lang]?.[en]||en;
+}
+function localizeExtraUI(){
+ // Capture original unannotated static text only once. Never translate editable input values.
+ if(!originalRawNodes){
+  originalRawNodes=[];
+  const walk=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+  let n;
+  while((n=walk.nextNode())){
+   const parent=n.parentElement;
+   if(!parent||parent.closest('script,style,[data-i18n],[data-he][data-en],.language-gate'))continue;
+   const original=n.nodeValue||'',en=localizeOriginalText(original);
+   if(en!==null)originalRawNodes.push({node:n,original,en});
+  }
+ }
+ for(const x of originalRawNodes){if(!x.node.isConnected)continue;
+  const padLeft=x.original.match(/^\s*/)?.[0]||'',padRight=x.original.match(/\s*$/)?.[0]||'';
+  x.node.nodeValue=lang==='he'?x.original:padLeft+localizedStatic(x.original.trim(),x.en)+padRight;
+ }
+ for(const el of document.querySelectorAll('[placeholder]:not([data-placeholder-he])')){
+  if(!el.dataset.originalPlaceholder074)el.dataset.originalPlaceholder074=el.getAttribute('placeholder')||'';
+  const original=el.dataset.originalPlaceholder074;
+  el.placeholder=lang==='he'?original:EXTRA_PLACEHOLDERS[original]||original;
+ }
+ document.title='Discover Israel — '+(lang==='he'?'גרסה':'Version')+' 0.7.4';
+}
+const EXTRA_PLACEHOLDERS={
+ 'לדוגמה: תל אביב':'For example: Tel Aviv','לדוגמה: דיזנגוף':'For example: Dizengoff',
+ 'לדוגמה: דירה 4':'For example: apartment 4','לדוגמה: 5':'For example: 5',
+ 'המלון שלי':'My hotel','תל אביב, נמל התעופה, מלון...':'Tel Aviv, airport, hotel…',
+ 'תל אביב, יפו, מסעדה, חוף או כתובת':'Tel Aviv, Old Jaffa, a restaurant or an address',
+ 'למשל: תל אביב, יפו העתיקה, חוף גורדון':'E.g. Tel Aviv, Old Jaffa, Gordon Beach'
+};
+const EXTRA_WORDS={
+ ar:{'My preferences':'تفضيلاتي','My profile':'ملفي الشخصي','Guide':'الدليل','Trip map':'خريطة الرحلة','Explore map':'استكشف الخريطة','Search across Israel':'البحث في إسرائيل','Start date':'تاريخ البداية','End date':'تاريخ النهاية','Adults':'البالغون','Children':'الأطفال','Accommodation':'الإقامة','Restaurant – add to day':'مطعم – أضفه لليوم'},
+ ru:{'My preferences':'Мои предпочтения','My profile':'Мой профиль','Guide':'Справка','Explore map':'Карта Израиля','Start date':'Дата начала','End date':'Дата окончания','Adults':'Взрослые','Children':'Дети','Accommodation':'Проживание','Restaurant – add to day':'Ресторан — добавить в день'},
+ fr:{'My preferences':'Mes préférences','My profile':'Mon profil','Guide':'Guide','Explore map':'Explorer la carte','Start date':'Date de début','End date':'Date de fin','Adults':'Adultes','Children':'Enfants','Accommodation':'Hébergement','Restaurant – add to day':'Restaurant — ajouter au jour'},
+ es:{'My preferences':'Mis preferencias','My profile':'Mi perfil','Guide':'Guía','Explore map':'Explorar mapa','Start date':'Fecha de inicio','End date':'Fecha de fin','Adults':'Adultos','Children':'Niños','Accommodation':'Alojamiento','Restaurant – add to day':'Restaurante: añadir al día'},
+ de:{'My preferences':'Meine Vorlieben','My profile':'Mein Profil','Guide':'Anleitung','Explore map':'Karte erkunden','Start date':'Startdatum','End date':'Enddatum','Adults':'Erwachsene','Children':'Kinder','Accommodation':'Unterkunft'},
+ it:{'My preferences':'Le mie preferenze','My profile':'Il mio profilo','Guide':'Guida','Explore map':'Esplora mappa','Start date':'Data di inizio','End date':'Data di fine','Adults':'Adulti','Children':'Bambini','Accommodation':'Alloggio'},
+ pt:{'My preferences':'Minhas preferências','My profile':'Meu perfil','Guide':'Guia','Explore map':'Explorar mapa','Start date':'Data de início','End date':'Data de término','Adults':'Adultos','Children':'Crianças','Accommodation':'Hospedagem'},
+ zh:{'My preferences':'我的偏好','My profile':'我的个人资料','Guide':'使用指南','Explore map':'探索地图','Start date':'开始日期','End date':'结束日期','Adults':'成人','Children':'儿童','Accommodation':'住宿'},
+ ja:{'My preferences':'設定','My profile':'プロフィール','Guide':'ガイド','Explore map':'地図を開く','Start date':'開始日','End date':'終了日','Adults':'大人','Children':'子ども','Accommodation':'宿泊'},
+ tr:{'My preferences':'Tercihlerim','My profile':'Profilim','Guide':'Kılavuz','Explore map':'Haritayı keşfet','Start date':'Başlangıç tarihi','End date':'Bitiş tarihi','Adults':'Yetişkinler','Children':'Çocuklar','Accommodation':'Konaklama'}
+};
+for(const spec of LANG_INFO){if(spec.code!=='he'&&spec.code!=='en')T[spec.code]={...T.en,...(LOCALE_KEYS[spec.code]||{})}}
+T.en.noReplacement='No matching alternative was found in the available map data. Try a wider area, another type, or a specific place name.';
+T.he.noReplacement='לא נמצאה חלופה שמתאימה לבקשה במידע הזמין. נסה להרחיב את האזור, לבחור סוג אחר או לכתוב שם של מקום.';
+for(const spec of LANG_INFO)if(!['he','en'].includes(spec.code))T[spec.code].noReplacement=T.en.noReplacement;
+
+// Provide translated region and category names where possible; English is always the safe fallback.
+const EXTRA_REGIONS={ar:['الشمال','الوسط والساحل','القدس ومحيطها','الجنوب','كل إسرائيل'],ru:['Север','Центр и побережье','Иерусалим','Юг','Весь Израиль'],fr:['Nord','Centre et côte','Jérusalem','Sud','Tout Israël'],es:['Norte','Centro y costa','Jerusalén','Sur','Todo Israel'],de:['Norden','Zentrum und Küste','Jerusalem','Süden','Ganz Israel'],it:['Nord','Centro e costa','Gerusalemme','Sud','Tutto Israele'],pt:['Norte','Centro e litoral','Jerusalém','Sul','Todo Israel'],zh:['北部','中部和海岸','耶路撒冷','南部','以色列全境'],ja:['北部','中部・沿岸','エルサレム','南部','イスラエル全土'],tr:['Kuzey','Merkez ve sahil','Kudüs','Güney','Tüm İsrail']};
+for(const [code,words] of Object.entries(EXTRA_REGIONS))for(const [i,k] of ['north','center','jerusalem','south','all'].entries())regionNames[k][code]=words[i];
+
+function resolveGroupType(adults,kids){
+ let type=$('trip-company').value;
+ if(kids>0&&type!=='family')type='family';
+ if(type==='solo'&&adults+kids!==1)type=kids?'family':'friends';
+ if(type==='couple'&&(adults!==2||kids!==0))type=kids?'family':'friends';
+ if(type==='friends'&&adults+kids<2)type='solo';
+ return type;
+}
+function syncGroupFromSelect(){
+ const type=$('trip-company').value;
+ if(type==='solo'){$('party-adults').value=1;$('party-kids').value=0}
+ else if(type==='couple'){$('party-adults').value=2;$('party-kids').value=0}
+ else if(type==='friends'){$('party-adults').value=Math.max(2,Number($('party-adults').value)||2);$('party-kids').value=0}
+ else if(type==='family'){$('party-adults').value=Math.max(1,Number($('party-adults').value)||2);$('party-kids').value=Math.max(1,Number($('party-kids').value)||1)}
+}
+function syncGroupFromCounts(){const a=Number($('party-adults').value)||0,k=Number($('party-kids').value)||0;
+ const type=$('trip-company').value;
+ if(type==='solo'&&a+k!==1||type==='couple'&&(a!==2||k!==0)||type==='friends'&&k>0){$('trip-company').value=k>0?'family':a===1?'solo':a===2?'friends':'friends'}
+ if(type==='family'&&k===0&&a===2)$('trip-company').value='friends';
+}
+$('trip-company').addEventListener('change',syncGroupFromSelect);
+for(const id of ['party-adults','party-kids'])$(id).addEventListener('input',syncGroupFromCounts);
+function addFoodToDay(id){
+ if(!trip)return;const d=trip.itinerary[dayIndex];if(!d||!getPlace(id))return;
+ if(!d.places.includes(id))d.places.push(id);renderTrip();toast(langMsg('המסעדה נוספה לתוכנית היום.','Restaurant added to your day.'));
+}
+// Busy progress overlay: only active during a real operation, never masquerades as live data.
+function showBusy(title,detail){$('busy-title').textContent=title;$('busy-detail').textContent=detail;$('busy-overlay').classList.remove('hidden')}
+function updateBusy(title,detail){if(title)$('busy-title').textContent=title;if(detail)$('busy-detail').textContent=detail}
+function hideBusy(){$('busy-overlay').classList.add('hidden')}
+
+const USER_PROFILE_KEY='discoverIsraelUserProfile_v074';
+let userProfile={displayName:'',country:'',lang:''};
+try{Object.assign(userProfile,JSON.parse(localStorage.getItem(USER_PROFILE_KEY)||'{}'))}catch(e){}
+function openUserProfile(){
+ $('user-display-name').value=userProfile.displayName||'';$('user-country').value=userProfile.country||'';
+ $('user-preferred-language').innerHTML=LANG_INFO.map(x=>`<option value="${x.code}">${esc(x.native)}</option>`).join('');
+ $('user-preferred-language').value=userProfile.lang||lang;
+ $('user-profile-title').textContent=langMsg('הפרופיל שלי','My profile');
+ $('user-profile-intro').textContent=langMsg('הפרטים נשמרים רק בדפדפן הזה. אין צורך לפתוח חשבון.','Details stay in this browser. No registration is required.');
+ $('user-name-label').textContent=langMsg('שם תצוגה','Display name');$('user-country-label').textContent=langMsg('מדינת מגורים','Country of residence');$('user-language-label').textContent=langMsg('שפה מועדפת','Preferred language');
+ $('user-profile-preferences').textContent=langMsg('עריכת העדפות הטיולים שלי','Edit trip preferences');$('user-profile-cancel').textContent=tr('cancel');$('user-profile-save').textContent=langMsg('שמור פרופיל','Save profile');
+ $('user-profile-summary').textContent=langMsg('העדפותיך נשמרות בנפרד לכל מכשיר. תוכל לשנות אותן בכל רגע.','Your travel preferences are stored on this device and can be edited anytime.');
+ openOverlay('user-profile-overlay');
+}
+function closeUserProfile(){closeOverlay('user-profile-overlay')}
+$('user-profile-open').onclick=openUserProfile;
+$('user-profile-close').onclick=closeUserProfile;
+$('user-profile-cancel').onclick=closeUserProfile;
+$('user-profile-preferences').onclick=()=>{closeUserProfile();startOnboard()};
+$('user-profile-save').onclick=()=>{
+ const next={displayName:$('user-display-name').value.trim().slice(0,48),country:$('user-country').value,lang:$('user-preferred-language').value};
+ try{localStorage.setItem(USER_PROFILE_KEY,JSON.stringify(next));userProfile=next}catch(e){toast(langMsg('לא ניתן לשמור במכשיר הזה.','Could not save on this device.'));return}
+ closeUserProfile();if(next.lang!==lang)chooseLanguage(next.lang);toast(langMsg('הפרופיל נשמר במכשיר הזה.','Your profile was saved on this device.'));
+};
+$('onboard-exit').onclick=()=>{if(!localStorage.getItem(PROFILE_KEY))try{localStorage.setItem(PROFILE_KEY,JSON.stringify(profile))}catch(e){};$('onboard').classList.add('hidden')};
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('onboard').classList.contains('hidden'))$('onboard-exit').click()});
+
+let guideIndex=0;
+const GUIDE_STEPS=[
+ ['ברוכים הבאים ל־Discover Israel','זה האתר שלך לתכנון טיולים בישראל, מחיפוש מקומות ועד מסלול יומי.','Welcome to Discover Israel','Plan trips across Israel, from discovering places to viewing your route by day.'],
+ ['הכירו את עצמכם','בחרו העדפות לטיולים — הן יעזרו להציע לכם מקומות מתאימים בעתיד.','Set your preferences','Choose general travel preferences; you can change them at any time.'],
+ ['תכננו טיול','בחרו אזור, תאריכים, משתתפים, תחומי עניין ולינה. אפשר לבחור מקומות חובה.','Plan a trip','Choose a region, dates, group size, interests, accommodation and must-see places.'],
+ ['ערכו את המסלול','בכל יום אפשר לשנות מקומות, להוסיף מסעדה, לבחור מקום לינה ולפתוח ניווט.','Edit your route','Replace stops, add restaurants, choose accommodation and open navigation for any day.'],
+ ['שמרו וחזרו לטייל','שמרו את הטיול כדי לחזור אליו מאותו מכשיר. שמירה במכשיר אחר עדיין לא מסונכרנת.','Save and explore','Save trips to revisit them in this browser. Trips are not yet synced across devices.']
+];
+function renderTutorial(){
+ const s=GUIDE_STEPS[guideIndex],he=lang==='he';
+ $('tutorial-title').textContent=langMsg('מדריך למשתמש','How to use Discover Israel');
+ $('tutorial-content').innerHTML=`<div class="tutorial-progress">${guideIndex+1} / ${GUIDE_STEPS.length}</div><div class="tutorial-step"><h3>${esc(he?s[0]:s[2])}</h3><p>${esc(he?s[1]:s[3])}</p></div>`;
+ $('tutorial-back').textContent=langMsg('הקודם','Back');$('tutorial-next').textContent=guideIndex===GUIDE_STEPS.length-1?langMsg('סיום','Finish'):langMsg('הבא','Next');$('tutorial-skip').textContent=langMsg('סגור','Close');$('tutorial-back').disabled=guideIndex===0;
+}
+function openTutorial(){guideIndex=0;renderTutorial();openOverlay('tutorial-overlay')}
+function closeTutorial(){try{localStorage.setItem('discoverIsraelGuideSeen_v074','1')}catch(e){}closeOverlay('tutorial-overlay')}
+function maybeShowGuide(){if(!localStorage.getItem('discoverIsraelGuideSeen_v074')&&$('onboard').classList.contains('hidden')&&$('language-gate').classList.contains('hidden'))setTimeout(openTutorial,250)}
+$('tutorial-open').onclick=openTutorial;$('tutorial-close').onclick=closeTutorial;$('tutorial-skip').onclick=closeTutorial;
+$('tutorial-back').onclick=()=>{guideIndex=Math.max(0,guideIndex-1);renderTutorial()};
+$('tutorial-next').onclick=()=>{if(guideIndex===GUIDE_STEPS.length-1)closeTutorial();else{guideIndex++;renderTutorial()}};
+// The extra dialog is closed by its controls rather than by an overlay re-render.
+
+ // 0.6 — start location, required stops and map scope UI wiring.
 $('start-search').addEventListener('input',()=>{renderOriginResults();schedulePlaceSearch('start')});
 $('start-search').addEventListener('focus',renderOriginResults);
 $('must-search').addEventListener('input',()=>{renderMustResults();schedulePlaceSearch('must')});
@@ -1987,7 +2317,7 @@ document.querySelectorAll('[data-map-scope]').forEach(button=>button.addEventLis
 renderMustSelected();renderMustResults();renderOriginInfo();renderOriginResults();renderSharedSearch('day');
 
 // Initial language selection. Returning users keep their choice and land on Home.
-if(lang==='he'||lang==='en'){$('language-gate').classList.add('hidden');applyLanguage();showView('home');if(!localStorage.getItem(PROFILE_KEY))startOnboard()}else showLanguageGate();
+if(LANG_INFO.some(x=>x.code===lang)){$('language-gate').classList.add('hidden');applyLanguage();showView('home');if(!localStorage.getItem(PROFILE_KEY))startOnboard();else maybeShowGuide()}else showLanguageGate();
 })();
 </script>
 </body>
